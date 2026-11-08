@@ -1,0 +1,116 @@
+/* ==============================================================================
+   ESTILOS PERSONALIZADOS - BLOG DE LIDERAZGO & COACHING (ESPE)
+   ============================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Lora', Georgia, serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --color-espe-navy: #154360;
+  --color-espe-blue: #1E3A8A;
+  --color-espe-accent: #0D9488;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+}
+
+/* Barra de progreso de lectura superior */
+#reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #154360, #0D9488, #3B82F6);
+  width: 0%;
+  z-index: 9999;
+  transition: width 0.1s ease-out;
+}
+
+/* Tipografía de artículos para máxima legibilidad estilo editorial */
+.article-prose p {
+  margin-bottom: 1.25rem;
+  line-height: 1.8;
+  color: #334155;
+  font-size: 1.0625rem;
+}
+
+.dark .article-prose p {
+  color: #CBD5E1;
+}
+
+.article-prose h3 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: #0F172A;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.dark .article-prose h3 {
+  color: #F8FAFC;
+}
+
+/* Efectos visuales de tarjetas */
+.card-hover {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px -10px rgba(15, 23, 42, 0.12);
+}
+
+.dark .card-hover:hover {
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.4);
+}
+
+/* Personalización del scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #0F172A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #94A3B8;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748B;
+}
+
+/* Lightbox Modal para infografías */
+#lightbox-modal {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Estilos de Sangría Francesa para Referencias APA 7 */
+.apa-reference {
+  padding-left: 2rem;
+  text-indent: -2rem;
+  line-height: 1.6;
+}
+
+/* Animaciones sutiles */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
