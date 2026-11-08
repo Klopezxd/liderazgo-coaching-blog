@@ -24,7 +24,7 @@ function initTheme() {
   const darkIcon = document.getElementById("theme-toggle-dark-icon");
   const lightIcon = document.getElementById("theme-toggle-light-icon");
 
-  // Modo claro estricto por defecto: solo se activa dark si el usuario lo guardó expresamente
+  // Modo claro estricto por defecto
   const isDark = localStorage.getItem("color-theme") === "dark";
 
   if (isDark) {
@@ -161,14 +161,14 @@ function init360Selector() {
       if (btnKey === key) {
         btn.className = "actor-360-btn py-2 px-3 rounded-xl text-xs font-bold transition-all text-center bg-espe-navy text-white shadow-sm";
       } else {
-        btn.className = "actor-360-btn py-2 px-3 rounded-xl text-xs font-bold transition-all text-center bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-600";
+        btn.className = "actor-360-btn py-2 px-3 rounded-xl text-xs font-bold transition-all text-center bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700";
       }
     });
 
     contentContainer.innerHTML = `
       <div class="animate-fade-in p-5 sm:p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
         <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
-          <h4 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">${data.title}</h4>
+          <h4 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white" style="font-family: var(--font-heading);">${data.title}</h4>
           <span class="text-xs font-bold px-2.5 py-1 rounded-md ${data.badgeColor}">${data.badge}</span>
         </div>
         <p class="text-slate-700 dark:text-slate-200 text-sm leading-relaxed mb-4">${data.description}</p>
@@ -178,7 +178,7 @@ function init360Selector() {
             ${data.metrics.map(m => `<li class="flex items-start gap-2 text-xs sm:text-sm text-slate-800 dark:text-slate-200"><span class="text-emerald-600 dark:text-emerald-400 font-bold">✓</span> ${m}</li>`).join('')}
           </ul>
         </div>
-        <p class="text-xs italic text-slate-600 dark:text-slate-400 border-l-2 border-espe-navy dark:border-sky-500 pl-3">${data.quote}</p>
+        <p class="text-xs italic text-slate-600 dark:text-slate-400 border-l-2 border-espe-navy dark:border-sky-500 pl-3" style="font-family: var(--font-editorial);">${data.quote}</p>
       </div>
     `;
   }
@@ -194,7 +194,7 @@ function init360Selector() {
 }
 
 // -----------------------------------------------------------------------------
-// 5. ACORDEÓN REFINADO: PREGUNTAS PODEROSAS ICF (ALTO CONTRASTE)
+// 5. ACORDEÓN REFINADO: PREGUNTAS PODEROSAS ICF
 // -----------------------------------------------------------------------------
 function renderPreguntasICF() {
   const container = document.getElementById("preguntas-icf-container");
@@ -202,10 +202,10 @@ function renderPreguntasICF() {
 
   container.innerHTML = PREGUNTAS_ICF_DATA.map((item, idx) => `
     <div class="accordion-item mb-2.5 rounded-xl border border-slate-200 dark:border-slate-700/80 overflow-hidden bg-white dark:bg-slate-800/80 shadow-sm transition-all">
-      <button type="button" class="w-full text-left py-3 px-4 flex items-center justify-between gap-4 text-slate-900 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors" onclick="toggleICFItem(${idx})">
+      <button type="button" class="w-full text-left py-3.5 px-4 flex items-center justify-between gap-4 text-slate-900 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors" onclick="toggleICFItem(${idx})">
         <div class="flex items-center gap-3">
           <span class="text-xs font-bold font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-600">${item.num}</span>
-          <span class="text-sm font-semibold">${item.question}</span>
+          <span class="text-sm font-semibold" style="font-family: var(--font-heading);">${item.question}</span>
         </div>
         <svg id="icf-icon-${idx}" class="w-4 h-4 text-slate-400 dark:text-slate-300 flex-shrink-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -236,7 +236,7 @@ window.toggleICFItem = function(idx) {
 };
 
 // -----------------------------------------------------------------------------
-// 6. VIDEOTECA Y RECURSOS AUDIOVISUALES
+// 6. VIDEOTECA Y RECURSOS AUDIOVISUALES (FILTROS PÍLDORA)
 // -----------------------------------------------------------------------------
 function renderVideoteca(category) {
   const container = document.getElementById("videos-grid");
@@ -263,24 +263,22 @@ function renderVideoteca(category) {
             <span class="text-espe-navy dark:text-sky-400 uppercase tracking-wider text-[11px] font-bold">${v.category.toUpperCase()}</span>
             <span>${v.speaker}</span>
           </div>
-          <h4 class="font-bold text-base text-slate-900 dark:text-white mb-2 leading-snug">${v.title}</h4>
+          <h4 class="font-bold text-base text-slate-900 dark:text-white mb-2 leading-snug" style="font-family: var(--font-heading);">${v.title}</h4>
           <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">${v.description}</p>
         </div>
         <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-700/60 flex items-center justify-end text-xs">
-          <a href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">Ver en YouTube ↗</a>
+          <a href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline font-semibold">Ver en YouTube ↗</a>
         </div>
       </div>
     </div>
   `).join("");
 
-  document.querySelectorAll(".video-filter-btn").forEach(btn => {
+  document.querySelectorAll(".filter-pill").forEach(btn => {
     const cat = btn.getAttribute("data-cat");
     if (cat === category) {
-      btn.classList.add("bg-espe-navy", "text-white");
-      btn.classList.remove("bg-slate-100", "dark:bg-slate-800", "text-slate-600", "dark:text-slate-300");
+      btn.classList.add("active");
     } else {
-      btn.classList.remove("bg-espe-navy", "text-white");
-      btn.classList.add("bg-slate-100", "dark:bg-slate-800", "text-slate-600", "dark:text-slate-300");
+      btn.classList.remove("active");
     }
   });
 }
@@ -335,13 +333,13 @@ function renderReflexiones() {
   if (!container) return;
 
   container.innerHTML = TEAM_MEMBERS.map(m => `
-    <div class="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/80 shadow-sm flex flex-col justify-between">
+    <div class="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm card-hover flex flex-col justify-between">
       <div>
         <div class="border-b border-slate-100 dark:border-slate-700/60 pb-2.5 mb-3">
-          <h4 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base leading-snug">${m.name}</h4>
+          <h4 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base leading-snug" style="font-family: var(--font-heading);">${m.name}</h4>
           <span class="text-xs text-slate-500 dark:text-slate-400 font-medium">${m.career} • ${m.topic}</span>
         </div>
-        <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed italic">"${m.reflection}"</p>
+        <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed italic" style="font-family: var(--font-editorial);">"${m.reflection}"</p>
       </div>
     </div>
   `).join("");
@@ -382,7 +380,6 @@ function renderReferencias(searchQuery = "") {
     return;
   }
 
-  // Renderizado como lista académica con sangría francesa (sin contadores de IA)
   container.innerHTML = filtered.map(r => `
     <div class="apa-reference-item text-xs sm:text-sm text-slate-900 dark:text-slate-100">
       <strong>${r.author}</strong> (${r.year}). <em>${r.title}</em>. ${r.source}.
