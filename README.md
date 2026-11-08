@@ -11,12 +11,12 @@
 
 ## 📌 Descripción del Proyecto
 Este portal web académico e interactivo fue desarrollado desde cero con tecnologías web nativas para presentar de forma estructurada, dinámica y accesible los tres ejes formativos de la **Actividad 05**:
-1. **Proceso de Comunicación en Entornos Digitales y Organizacionales (8 pts):** Envío, recepción, barreras cotidianas en la virtualidad, ciclo de retroalimentación, ruido digital / infoxicación, adopción ética de IA (enfoque 2026) y resolución de crisis en equipos.
-2. **Modelo de Retroalimentación 360 Grados (4 pts):** Arquitectura del sistema multisource, los cuatro actores evaluativos (superiores, pares, subordinados y autoevaluación), cultura de confianza, caso práctico aplicado en el sector educativo y matriz de mitigación de riesgos.
-3. **Retroalimentación Estilo Coaching y Acompañamiento 1 a 1 (4 pts):** Marco de competencias clave de la International Coaching Federation (ICF), decálogo interactivo de preguntas poderosas y metodología práctica de reuniones 1 a 1 en tres momentos bajo el método GROW.
-4. **Blog Grupal y Recursos Multimedia (2 pts):** Reproductores de video embebidos de YouTube y galería interactiva de infografías en alta resolución elaboradas en Canva y Genially.
+1. **Proceso de Comunicación en Entornos Digitales y Organizacionales:** Envío, recepción, barreras cotidianas en la virtualidad, ciclo de retroalimentación, ruido digital / infoxicación, adopción ética de IA (enfoque 2026) y resolución de crisis en equipos.
+2. **Modelo de Retroalimentación 360 Grados:** Arquitectura del sistema multisource, los cuatro actores evaluativos (superiores, pares, subordinados y autoevaluación), cultura de confianza, caso práctico aplicado en el sector educativo y matriz de mitigación de riesgos.
+3. **Retroalimentación Estilo Coaching y Acompañamiento 1 a 1:** Marco de competencias clave de la International Coaching Federation (ICF), decálogo interactivo de preguntas poderosas y metodología práctica de reuniones 1 a 1 en tres momentos bajo el método GROW.
+4. **Blog Grupal y Recursos Multimedia:** Reproductores de video embebidos de YouTube y galería interactiva de infografías en alta resolución elaboradas en Canva y Genially.
 5. **Muro de Reflexiones de los 8 Integrantes:** Perspectivas individuales y autoevaluación de la sinergia colaborativa.
-6. **Biblioteca Bibliográfica APA 7 (1 pt):** Buscador y filtrador en tiempo real de las 20 fuentes científicas actualizadas.
+6. **Biblioteca Bibliográfica APA 7:** Buscador y filtrador en tiempo real de las 20 fuentes científicas actualizadas.
 
 ---
 
