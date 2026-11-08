@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Liderazgo & Coaching en Entornos Digitales | Blog Grupo A - ESPE</title>
-  <meta name="description" content="Blog académico interactivo sobre habilidades de comunicación efectiva, modelo de evaluación 360° y competencias conversacionales de coaching ICF. Universidad de las Fuerzas Armadas ESPE.">
-  <meta name="author" content="Grupo A - Liderazgo NRC 34467">
+  <title>Liderazgo & Coaching en Entornos Digitales | Blog Académico - ESPE</title>
+  <meta name="description" content="Blog académico sobre habilidades de comunicación efectiva, modelo de evaluación 360° y competencias conversacionales de coaching ICF en entornos organizacionales contemporáneos.">
+  <meta name="author" content="Grupo A - Liderazgo (NRC: 34467) - ESPE">
 
-  <!-- Tailwind CSS CDN con configuración personalizada -->
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -17,8 +17,7 @@
           colors: {
             'espe-navy': '#154360',
             'espe-blue': '#1E3A8A',
-            'espe-accent': '#0D9488',
-            'espe-light': '#F8FAFC'
+            'espe-accent': '#0D9488'
           },
           fontFamily: {
             sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
@@ -34,39 +33,39 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" type="image/png" href="assets/img/logo_espe.png">
 </head>
-<body class="bg-[#FBFBFC] dark:bg-slate-900 text-slate-800 dark:text-slate-100 antialiased transition-colors duration-200">
+<body class="bg-[#FCFCFD] dark:bg-slate-900 text-slate-800 dark:text-slate-100 antialiased transition-colors duration-200">
 
-  <!-- Barra de progreso de lectura fija -->
+  <!-- Barra de progreso de lectura superior -->
   <div id="reading-progress"></div>
 
   <!-- ============================================================================
        NAVBAR SUPERIOR FIJO
        ============================================================================ -->
   <header class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800 transition-colors">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         
-        <!-- Logo y Título de Cátedra -->
-        <a href="#hero" class="flex items-center gap-3 group">
+        <!-- Logo y Nombre de Cátedra -->
+        <a href="#hero" class="flex items-center gap-3">
           <img src="assets/img/logo_espe.png" alt="ESPE Logo" class="h-9 w-auto object-contain">
-          <div class="border-l border-slate-300 dark:border-slate-700 pl-3">
+          <div class="border-l border-slate-200 dark:border-slate-700 pl-3">
             <span class="block text-xs font-bold uppercase tracking-wider text-espe-navy dark:text-sky-400">ESPE • Liderazgo</span>
-            <span class="block text-xs text-slate-500 dark:text-slate-400 font-medium">Grupo A | NRC 34467</span>
+            <span class="block text-[11px] text-slate-500 dark:text-slate-400 font-medium">Grupo A | NRC 34467</span>
           </div>
         </a>
 
         <!-- Enlaces de navegación desktop -->
-        <nav class="hidden lg:flex items-center gap-6 text-xs font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-300">
+        <nav class="hidden md:flex items-center gap-6 text-xs font-semibold tracking-wider text-slate-600 dark:text-slate-300">
           <a href="#comunicacion" class="hover:text-espe-navy dark:hover:text-sky-400 transition-colors">1. Comunicación</a>
           <a href="#evaluacion-360" class="hover:text-espe-navy dark:hover:text-sky-400 transition-colors">2. Modelo 360°</a>
           <a href="#coaching" class="hover:text-espe-navy dark:hover:text-sky-400 transition-colors">3. Coaching ICF</a>
-          <a href="#multimedia" class="hover:text-espe-navy dark:hover:text-sky-400 transition-colors">4. Videoteca</a>
-          <a href="#reflexiones" class="hover:text-espe-navy dark:hover:text-sky-400 transition-colors">5. Reflexiones</a>
+          <a href="#videoteca" class="hover:text-espe-navy dark:hover:text-sky-400 transition-colors">4. Videoteca</a>
+          <a href="#reflexiones" class="hover:text-espe-navy dark:hover:text-sky-400 transition-colors">5. Reflexión</a>
           <a href="#referencias" class="hover:text-espe-navy dark:hover:text-sky-400 transition-colors">6. Referencias</a>
         </nav>
 
         <!-- Controles laterales: Modo oscuro y GitHub -->
-        <div class="flex items-center gap-2.5">
+        <div class="flex items-center gap-2">
           <!-- Botón de cambio de tema -->
           <button id="theme-toggle" type="button" aria-label="Cambiar tema" class="p-2 rounded-xl text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition-colors">
             <svg id="theme-toggle-dark-icon" class="w-4 h-4 hidden" fill="currentColor" viewBox="0 0 20 20">
@@ -78,13 +77,13 @@
           </button>
 
           <!-- Botón de GitHub -->
-          <a href="https://github.com/Klopezxd/liderazgo-coaching-blog.git" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-700 dark:text-slate-200 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition-colors" title="Ver código en GitHub">
+          <a href="https://github.com/Klopezxd/liderazgo-coaching-blog.git" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-700 dark:text-slate-200 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition-colors">
             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
             <span>GitHub</span>
           </a>
 
           <!-- Botón menú móvil -->
-          <button id="mobile-menu-btn" type="button" aria-label="Abrir menú" class="lg:hidden p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+          <button id="mobile-menu-btn" type="button" aria-label="Abrir menú" class="md:hidden p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
           </button>
         </div>
@@ -92,78 +91,44 @@
     </div>
 
     <!-- Menú móvil desplegable -->
-    <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 pt-3 pb-5 space-y-2">
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 pt-3 pb-5 space-y-2">
       <a href="#comunicacion" class="block py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-espe-navy">1. Proceso de Comunicación</a>
       <a href="#evaluacion-360" class="block py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-espe-navy">2. Modelo de Evaluación 360°</a>
       <a href="#coaching" class="block py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-espe-navy">3. Coaching ICF & Reuniones 1 a 1</a>
-      <a href="#multimedia" class="block py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-espe-navy">4. Videoteca y Recursos Multimedia</a>
-      <a href="#reflexiones" class="block py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-espe-navy">5. Muro de Reflexiones</a>
-      <a href="#referencias" class="block py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-espe-navy">6. Referencias Bibliográficas APA 7</a>
-      <a href="https://github.com/Klopezxd/liderazgo-coaching-blog.git" target="_blank" class="block py-2 text-sm font-semibold text-blue-600 dark:text-blue-400">↗ Ver Repositorio en GitHub</a>
+      <a href="#videoteca" class="block py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-espe-navy">4. Videoteca de Apoyo</a>
+      <a href="#reflexiones" class="block py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-espe-navy">5. Reflexión Grupal</a>
+      <a href="#referencias" class="block py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-espe-navy">6. Referencias Bibliográficas</a>
     </div>
   </header>
 
   <!-- ============================================================================
-       HERO EDITORIAL & METADATOS
+       HERO EDITORIAL SOBRIO (CERO TARJETAS INFLADAS NI BADGES DE IA)
        ============================================================================ -->
-  <section id="hero" class="relative overflow-hidden pt-12 pb-16 md:pt-16 md:pb-24 border-b border-slate-200/80 dark:border-slate-800 bg-gradient-to-b from-white via-slate-50/50 to-white dark:from-slate-900 dark:via-slate-850 dark:to-slate-900">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+  <section id="hero" class="relative pt-12 pb-14 md:pt-16 md:pb-18 border-b border-slate-200/80 dark:border-slate-800 bg-gradient-to-b from-white via-slate-50/40 to-white dark:from-slate-900 dark:via-slate-850 dark:to-slate-900">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       
-      <!-- Badges institucionales -->
-      <div class="inline-flex flex-wrap items-center justify-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-6 shadow-sm">
-        <span class="text-espe-navy dark:text-sky-400 font-bold">ESPE</span>
-        <span>•</span>
-        <span>Departamento de Seguridad y Defensa</span>
-        <span>•</span>
-        <span>NRC: 34467</span>
-      </div>
+      <!-- Eyebrow institucional -->
+      <p class="text-xs font-bold uppercase tracking-wider text-espe-navy dark:text-sky-400 mb-3">
+        Universidad de las Fuerzas Armadas ESPE • Departamento de Seguridad y Defensa
+      </p>
 
       <!-- Título principal -->
-      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight mb-5">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight mb-4">
         Habilidades de Comunicación y Coaching en Entornos Digitales y Organizacionales
       </h1>
 
-      <!-- Subtítulo -->
-      <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed mb-8">
-        Portal web académico e interactivo correspondiente a la <strong>Actividad de Aprendizaje N.º 05</strong>. Desarrollado de forma colaborativa por el <strong>Grupo A</strong> bajo la tutoría académica del <strong>Ing. Edwin Giovanny Puente Moromenacho, EdD.</strong>
+      <!-- Subtítulo sobrio -->
+      <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed mb-6">
+        Un análisis aplicado sobre los desafíos de la comunicación remota, la evaluación multisource 360° y el acompañamiento individual en equipos de trabajo.
       </p>
 
-      <!-- Ficha de Metadatos del Blog -->
-      <div class="flex flex-wrap items-center justify-center gap-4 text-xs font-medium text-slate-500 dark:text-slate-400 mb-10">
-        <span class="flex items-center gap-1.5">
-          <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-          Publicado: Noviembre 2026
-        </span>
+      <!-- Byline académico -->
+      <div class="flex flex-wrap items-center justify-center gap-3 text-xs text-slate-500 dark:text-slate-400">
+        <span>Docente: <strong>Ing. Edwin Giovanny Puente Moromenacho, EdD.</strong></span>
         <span>•</span>
-        <span class="flex items-center gap-1.5">
-          <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          Lectura Estimada: 12 min
-        </span>
+        <span>Asignatura: <strong>Liderazgo (NRC: 34467)</strong></span>
         <span>•</span>
-        <span class="flex items-center gap-1.5">
-          <svg class="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          Normas APA 7.ª Edición
-        </span>
-      </div>
-
-      <!-- Tarjetas de Estadísticas del Entregable -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-3.5 max-w-4xl mx-auto">
-        <div class="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-sm">
-          <span class="block text-2xl font-black text-espe-navy dark:text-sky-400 mb-0.5">8</span>
-          <span class="text-xs font-semibold text-slate-600 dark:text-slate-300">Integrantes Multidisciplinarios</span>
-        </div>
-        <div class="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-sm">
-          <span class="block text-2xl font-black text-emerald-600 dark:text-emerald-400 mb-0.5">3</span>
-          <span class="text-xs font-semibold text-slate-600 dark:text-slate-300">Capítulos de Rigor Académico</span>
-        </div>
-        <div class="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-sm">
-          <span class="block text-2xl font-black text-purple-600 dark:text-purple-400 mb-0.5">5</span>
-          <span class="text-xs font-semibold text-slate-600 dark:text-slate-300">Infografías & Diagramas</span>
-        </div>
-        <div class="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-sm">
-          <span class="block text-2xl font-black text-blue-600 dark:text-blue-400 mb-0.5">20</span>
-          <span class="text-xs font-semibold text-slate-600 dark:text-slate-300">Fuentes Científicas APA 7</span>
-        </div>
+        <span>Grupo A • Noviembre 2026</span>
       </div>
 
     </div>
@@ -172,120 +137,105 @@
   <!-- ============================================================================
        CONTENIDO PRINCIPAL
        ============================================================================ -->
-  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-20">
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
 
     <!-- ==========================================================================
          CAPÍTULO 1: PROCESO DE COMUNICACIÓN (8 PTS)
          ========================================================================== -->
     <article id="comunicacion" class="scroll-mt-24">
       
-      <!-- Cabecera de Sección -->
-      <div class="border-b border-slate-200 dark:border-slate-800 pb-4 mb-8">
-        <div class="flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-espe-navy dark:text-sky-400 mb-1.5">
-          <span>Capítulo 1</span>
-          <span>•</span>
-          <span>Criterio Oficial: 8 Puntos</span>
-        </div>
+      <div class="border-b border-slate-200 dark:border-slate-800 pb-3 mb-8">
         <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
-          1. Proceso de Comunicación en Entornos Digitales y Organizacionales
+          1. Proceso de Comunicación en Entornos Digitales
         </h2>
       </div>
 
       <div class="article-prose space-y-12">
 
         <!-- 1.1 Envío del Mensaje -->
-        <section id="sec-1-1" class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-sm">
-          <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
-            <h3 class="text-xl font-bold text-slate-900 dark:text-white !m-0">1.1 Envío del Mensaje, Claridad e Intencionalidad</h3>
-            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">Investigación: Nicole Tonato</span>
-          </div>
+        <section id="sec-1-1">
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white">1.1 Envío del mensaje, claridad e intencionalidad</h3>
           
           <p>
             En el ámbito de las organizaciones contemporáneas y los entornos formativos, la comunicación digital no consiste únicamente en transmitir información, sino en asegurar que el emisor estructure el mensaje con un propósito claro, seleccionando los canales adecuados y verificando la comprensión precisa por parte de los destinatarios. Un emisor eficaz asume la responsabilidad de definir el tono, el momento oportuno y el formato idóneo para evitar ambigüedades.
           </p>
 
-          <div class="my-6 p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border-l-4 border-espe-navy dark:border-sky-500">
-            <h4 class="font-bold text-sm text-slate-900 dark:text-white mb-2">Caso Práctico Aplicado: Organización de la Feria Académica</h4>
+          <div class="my-5 p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border-l-4 border-espe-navy dark:border-sky-500">
+            <h4 class="font-bold text-sm text-slate-900 dark:text-white mb-2">Caso Práctico: Organización de la Feria Académica</h4>
             <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-3">
-              Un coordinador de una institución de educación superior debe asignar responsabilidades y cronogramas a un equipo docente diverso. Para erradicar confusiones, implementa una estrategia multicanal coordinada:
+              Un coordinador de área en educación superior debe asignar responsabilidades operativas y cronogramas a un equipo docente diverso. Con el fin de erradicar interpretaciones erróneas, se implementa una estrategia multicanal coordinada:
             </p>
             <ul class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 space-y-1.5 list-disc list-inside">
-              <li><strong>Videollamada síncrona:</strong> Para socializar la visión global del proyecto y absolver dudas conceptuales en vivo.</li>
+              <li><strong>Videollamada síncrona:</strong> Para socializar la visión general y absolver dudas conceptuales en tiempo real.</li>
               <li><strong>Correo electrónico institucional:</strong> Para formalizar el acta de acuerdos, cronograma y matrices de entregables.</li>
-              <li><strong>Mensajería instantánea (WhatsApp):</strong> Uso exclusivo para alertas atómicas y recordatorios ágiles de avance.</li>
+              <li><strong>Mensajería instantánea:</strong> Uso exclusivo para alertas atómicas y recordatorios ágiles de avance.</li>
             </ul>
           </div>
 
           <!-- Imagen 1.1 -->
-          <div class="mt-6 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900">
-            <img src="assets/img/figura_1_1_nicole.png" alt="Figura 1.1 Canales Escritos vs Videollamadas" class="w-full max-h-96 object-contain p-4 cursor-pointer hover:opacity-95 transition-opacity" onclick="openLightbox('assets/img/figura_1_1_nicole.png', 'Figura 1.1. Comparación de canales comunicacionales: Canales escritos vs. Videollamadas interactivas.', 'Nicole Tonato')">
-            <div class="p-3 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 text-center">
-              <span class="text-xs italic text-slate-500 dark:text-slate-400">Figura 1.1. Comparación de canales: Canales escritos vs. Videollamadas. Fuente: Nicole Tonato (Canva, 2026).</span>
+          <div class="my-6 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900">
+            <img src="assets/img/figura_1_1_nicole.png" alt="Figura 1. Comparación de canales comunicacionales" class="w-full max-h-96 object-contain p-3 cursor-pointer hover:opacity-95 transition-opacity" onclick="openLightbox('assets/img/figura_1_1_nicole.png', 'Figura 1. Comparación de canales: Canales escritos vs. Videollamadas.')">
+            <div class="p-2.5 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 text-center">
+              <span class="text-xs text-slate-500 dark:text-slate-400">Figura 1. Comparación de canales de comunicación: Canales escritos vs. Videollamadas.</span>
             </div>
           </div>
         </section>
 
         <!-- 1.2 Recepción y Barreras -->
-        <section id="sec-1-2" class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-sm">
-          <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
-            <h3 class="text-xl font-bold text-slate-900 dark:text-white !m-0">1.2 Recepción del Mensaje, Contexto y Barreras Comunicacionales</h3>
-            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300">Investigación: Francis Batallas</span>
-          </div>
+        <section id="sec-1-2">
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white">1.2 Recepción del mensaje, contexto y barreras comunicacionales</h3>
 
           <p>
-            En el contexto organizacional, la comunicación solo se consolida de forma exitosa cuando el receptor comprende el mensaje en la dimensión exacta concebida por el emisor (Robbins & Judge, 2017). El receptor no cumple un papel pasivo ni opera como un simple buzón; por el contrario, actúa como un intérprete activo que decodifica cada palabra a partir de sus vivencias laborales previas, escala de valores y estado anímico particular (Chiavenato, 2020).
+            En el contexto organizacional, la comunicación solo se consolida de forma exitosa cuando el receptor comprende el mensaje en la dimensión exacta concebida por el emisor (Robbins & Judge, 2017). El receptor no cumple un papel pasivo ni actúa como un simple buzón; por el contrario, actúa como un intérprete activo que decodifica cada palabra a partir de sus vivencias previas, escala de valores y estado anímico particular (Chiavenato, 2020).
           </p>
 
-          <!-- Matriz de Barreras -->
+          <!-- Tabla de Barreras con Hover Seguro en Modo Oscuro -->
           <div class="my-6 overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
             <table class="w-full text-left text-xs sm:text-sm">
               <thead class="bg-espe-navy text-white text-xs uppercase font-semibold">
                 <tr>
-                  <th class="p-3.5">Barrera Digital Crítica</th>
-                  <th class="p-3.5">Riesgo en el Desempeño</th>
-                  <th class="p-3.5">Estrategia Práctica de Mitigación</th>
+                  <th class="p-3.5">Barrera Digital</th>
+                  <th class="p-3.5">Riesgo en el Equipo</th>
+                  <th class="p-3.5">Medida de Mitigación</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-slate-200 dark:divide-slate-700 bg-white dark:bg-slate-800">
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-750">
-                  <td class="p-3.5 font-bold text-rose-600 dark:text-rose-400">🔴 Fallas de red y conectividad</td>
-                  <td class="p-3.5 text-slate-600 dark:text-slate-300">Pérdida de directrices e ideas cortadas en llamadas.</td>
-                  <td class="p-3.5 text-slate-600 dark:text-slate-300">Grabar sesiones y ratificar acuerdos mediante minutas compartidas.</td>
+                <tr class="table-row-hover">
+                  <td class="p-3.5 font-bold text-rose-600 dark:text-rose-400">Fallas de red y conectividad</td>
+                  <td class="p-3.5 text-slate-700 dark:text-slate-200">Pérdida de directrices e ideas cortadas en llamadas.</td>
+                  <td class="p-3.5 text-slate-700 dark:text-slate-200">Grabar sesiones y ratificar acuerdos mediante minutas.</td>
                 </tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-750">
-                  <td class="p-3.5 font-bold text-amber-600 dark:text-amber-400">🟡 Fatiga informática de pantallas</td>
-                  <td class="p-3.5 text-slate-600 dark:text-slate-300">Lecturas superficiales y olvido de plazos pactados (Peiró & Soler, 2020).</td>
-                  <td class="p-3.5 text-slate-600 dark:text-slate-300">Estructurar directrices en listas numeradas y espaciar reuniones.</td>
+                <tr class="table-row-hover">
+                  <td class="p-3.5 font-bold text-amber-600 dark:text-amber-400">Fatiga informática de pantallas</td>
+                  <td class="p-3.5 text-slate-700 dark:text-slate-200">Lecturas superficiales y olvido de plazos (Peiró & Soler, 2020).</td>
+                  <td class="p-3.5 text-slate-700 dark:text-slate-200">Estructurar directrices en listas numeradas y espaciar reuniones.</td>
                 </tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-750">
-                  <td class="p-3.5 font-bold text-orange-600 dark:text-orange-400">🟠 Frialdad del texto plano</td>
-                  <td class="p-3.5 text-slate-600 dark:text-slate-300">Mensajes percibidos como cortantes o autoritarios.</td>
-                  <td class="p-3.5 text-slate-600 dark:text-slate-300">Emplear trato cordial y sustituir cadenas de texto por llamadas breves.</td>
+                <tr class="table-row-hover">
+                  <td class="p-3.5 font-bold text-orange-600 dark:text-orange-400">Frialdad del texto plano</td>
+                  <td class="p-3.5 text-slate-700 dark:text-slate-200">Mensajes percibidos como cortantes o autoritarios.</td>
+                  <td class="p-3.5 text-slate-700 dark:text-slate-200">Emplear un tono cordial y sustituir cadenas de texto por llamadas.</td>
                 </tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-750">
-                  <td class="p-3.5 font-bold text-emerald-600 dark:text-emerald-400">🟢 Suposiciones e inferencias</td>
-                  <td class="p-3.5 text-slate-600 dark:text-slate-300">Duplicación involuntaria de esfuerzos y retrasos.</td>
-                  <td class="p-3.5 text-slate-600 dark:text-slate-300">Aplicar técnica del parafraseo y formular preguntas aclaratorias.</td>
+                <tr class="table-row-hover">
+                  <td class="p-3.5 font-bold text-emerald-600 dark:text-emerald-400">Suposiciones e inferencias</td>
+                  <td class="p-3.5 text-slate-700 dark:text-slate-200">Duplicación involuntaria de esfuerzos y retrasos.</td>
+                  <td class="p-3.5 text-slate-700 dark:text-slate-200">Aplicar la técnica del parafraseo y formular preguntas aclaratorias.</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
           <!-- Imagen 1.2 -->
-          <div class="mt-6 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900">
-            <img src="assets/img/figura_1_2_francis.jpeg" alt="Figura 1.2 Barreras Comunicacionales" class="w-full max-h-96 object-contain p-4 cursor-pointer hover:opacity-95 transition-opacity" onclick="openLightbox('assets/img/figura_1_2_francis.jpeg', 'Figura 1.2. Esquema visual: Barreras comunicacionales más recurrentes en entornos digitales.', 'Francis Batallas')">
-            <div class="p-3 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 text-center">
-              <span class="text-xs italic text-slate-500 dark:text-slate-400">Figura 1.2. Esquema visual: Barreras de la comunicación en la virtualidad. Fuente: Francis Batallas (2026).</span>
+          <div class="my-6 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900">
+            <img src="assets/img/figura_1_2_francis.jpeg" alt="Figura 2. Barreras Comunicacionales" class="w-full max-h-96 object-contain p-3 cursor-pointer hover:opacity-95 transition-opacity" onclick="openLightbox('assets/img/figura_1_2_francis.jpeg', 'Figura 2. Esquema de barreras comunicacionales más recurrentes en entornos digitales.')">
+            <div class="p-2.5 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 text-center">
+              <span class="text-xs text-slate-500 dark:text-slate-400">Figura 2. Esquema visual: Barreras comunicacionales en entornos digitales.</span>
             </div>
           </div>
         </section>
 
-        <!-- 1.3 Ciclo de Feedback, Ruido e IA (Paola) -->
-        <section id="sec-1-3" class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-sm">
-          <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
-            <h3 class="text-xl font-bold text-slate-900 dark:text-white !m-0">1.3 Ciclo de Retroalimentación, Ruido Digital y Nuevas Tecnologías</h3>
-            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300">Investigación: Paola Amaguaya</span>
-          </div>
+        <!-- 1.3 Ciclo de Feedback, Ruido e IA -->
+        <section id="sec-1-3">
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white">1.3 Ciclo de retroalimentación, sobrecarga informativa e IA</h3>
 
           <p>
             La retroalimentación constituye el elemento de cierre del proceso comunicativo, garantizando que el emisor verifique si su mensaje fue interpretado conforme a su propósito original. <strong>Zyberaj (2026)</strong>, mediante una revisión sistemática y metaanálisis de 24 investigaciones empíricas, evidencia que la efectividad del feedback supervisado depende sustancialmente del modo en que el colaborador lo procesa internamente, lo valida y decide modificar su conducta laboral.
@@ -295,46 +245,43 @@
             En los entornos contemporáneos de trabajo híbrido y virtual, este flujo bidireccional se ve amenazado por el fenómeno del <strong>ruido digital y la infoxicación</strong>. <strong>Marsh et al. (2024)</strong>, tras evaluar a 142 profesionales digitales, demostraron que la sobrecarga de datos y la angustia por perder información crítica (FOMO) elevan significativamente los índices de estrés y propician el agotamiento laboral (burnout).
           </p>
 
-          <div class="my-5 p-5 rounded-2xl bg-violet-50/60 dark:bg-violet-950/30 border border-violet-200 dark:border-violet-800">
-            <h4 class="font-bold text-sm text-violet-900 dark:text-violet-200 mb-2">Adopción Ética de la Inteligencia Artificial Generativa (Enfoque 2026)</h4>
+          <div class="my-5 p-5 rounded-2xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-700">
+            <h4 class="font-bold text-sm text-slate-900 dark:text-white mb-2">Adopción Ética de la Inteligencia Artificial Generativa</h4>
             <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-              Herramientas de IA optimizan la redacción de informes y automatizan minutas de acuerdos. No obstante, <strong>Mayer y Schwehn (2025)</strong> advierten que, si bien la inteligencia artificial incrementa la eficiencia de tareas técnicas, su empleo acrítico puede provocar desalineación en el aprendizaje colaborativo y deshumanización de los vínculos de trabajo. La tecnología debe potenciar, mas no reemplazar, la empatía y la calidez del diálogo humano.
+              Herramientas basadas en IA optimizan la redacción de informes y automatizan minutas de acuerdos. No obstante, <strong>Mayer y Schwehn (2025)</strong> advierten que, si bien la inteligencia artificial incrementa la eficiencia de tareas técnicas, su empleo acrítico puede provocar desalineación en el aprendizaje colaborativo y deshumanización de los vínculos de trabajo. La tecnología debe potenciar, mas no reemplazar, la empatía y la calidez del diálogo humano.
             </p>
           </div>
 
           <!-- Imagen 1.3 -->
-          <div class="mt-6 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900">
-            <img src="assets/img/figura_1_3_paola.png" alt="Figura 1.3 Ciclo de Feedback e IA" class="w-full max-h-96 object-contain p-4 cursor-pointer hover:opacity-95 transition-opacity" onclick="openLightbox('assets/img/figura_1_3_paola.png', 'Figura 1.3. Ciclo de retroalimentación efectiva, ruido digital e impacto de la IA en la comunicación organizacional.', 'Paola Amaguaya')">
-            <div class="p-3 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 text-center">
-              <span class="text-xs italic text-slate-500 dark:text-slate-400">Figura 1.3. Ciclo de retroalimentación, ruido digital e IA. Fuente: Paola Amaguaya (Genially, 2026).</span>
+          <div class="my-6 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900">
+            <img src="assets/img/figura_1_3_paola.png" alt="Figura 3. Ciclo de Retroalimentación y Uso de IA" class="w-full max-h-96 object-contain p-3 cursor-pointer hover:opacity-95 transition-opacity" onclick="openLightbox('assets/img/figura_1_3_paola.png', 'Figura 3. Ciclo de retroalimentación efectiva, ruido digital e impacto de la IA en la comunicación organizacional.')">
+            <div class="p-2.5 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 text-center">
+              <span class="text-xs text-slate-500 dark:text-slate-400">Figura 3. Ciclo de retroalimentación, sobrecarga informativa e IA en la comunicación.</span>
             </div>
           </div>
         </section>
 
-        <!-- 1.4 Caso Práctico Aplicado (Dajanara) -->
-        <section id="sec-1-4" class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-sm">
-          <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
-            <h3 class="text-xl font-bold text-slate-900 dark:text-white !m-0">1.4 Caso Práctico Aplicado: Resolución de Conflictos en Equipos Virtuales</h3>
-            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-amber-50 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300">Modelado: Dajanara Borbor</span>
-          </div>
+        <!-- 1.4 Caso Práctico Aplicado -->
+        <section id="sec-1-4">
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white">1.4 Caso práctico: dinámica y resolución de crisis en equipos remotos</h3>
 
           <p>
-            Un equipo multidisciplinario de cinco estudiantes universitarios de la ESPE debió coordinar la entrega final de un proyecto técnico y su entorno web bajo una ventana temporal crítica de 48 horas. Afectado por la presión, el coordinador emitió una directriz apresurada mediante un mensaje plano un viernes por la noche: <em>«Por favor, suban todos sus avances terminados mañana a primera hora sin falta, no hay prórrogas»</em>.
+            Un equipo multidisciplinario de cinco estudiantes universitarios debió coordinar la entrega final de un proyecto técnico bajo una ventana temporal crítica de 48 horas. Afectado por la presión, el coordinador emitió una directriz apresurada mediante un mensaje plano un viernes por la noche: <em>«Por favor, suban todos sus avances terminados mañana a primera hora sin falta, no hay prórrogas»</em>.
           </p>
 
           <p>
-            Al carecer de modulación afectiva, varios colaboradores lo percibieron como una imposición fría y desconsiderada. Cortes imprevistos de red impidieron que dos miembros vieran la notificación, desatando duplicidad de tareas, reclamos y una actitud defensiva (Robbins & Judge, 2017).
+            Al carecer de modulación afectiva, varios colaboradores lo percibieron como una imposición fría. Cortes imprevistos de red impidieron que dos miembros vieran la notificación, desatando duplicidad de tareas, reclamos y una actitud defensiva (Robbins & Judge, 2017).
           </p>
 
           <p>
-            Frente al conflicto, el líder convocó a una reunión síncrona de veinte minutos con cámaras encendidas para restablecer la confianza, reconoció la precipitación de su mensaje y aplicó la técnica del parafraseo (<em>«Para confirmar que estamos alineados, ¿lo que requieres es apoyo con el diagrama para entregar a las 18h00?»</em>; Chiavenato, 2020), reorganizando las tareas con éxito.
+            Frente al conflicto, el líder convocó a una reunión síncrona de veinte minutos con cámaras encendidas para restablecer la confianza, reconoció la precipitación de su mensaje y aplicó rigurosamente la técnica del parafraseo (<em>«Para confirmar que estamos coordinados, ¿lo que requieres es apoyo con el diagrama para entregar a las 18h00?»</em>; Chiavenato, 2020), reorganizando las tareas con éxito.
           </p>
 
           <!-- Imagen 1.4 Flujograma -->
-          <div class="mt-6 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900">
-            <img src="assets/img/figura_1_4_dajanara.png" alt="Figura 1.4 Flujograma del Caso Práctico" class="w-full max-h-96 object-contain p-4 cursor-pointer hover:opacity-95 transition-opacity" onclick="openLightbox('assets/img/figura_1_4_dajanara.png', 'Figura 1.4. Flujograma metodológico del caso práctico: Dinámica comunicacional y resolución de crisis en equipos remotos.', 'Dajanara Borbor')">
-            <div class="p-3 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 text-center">
-              <span class="text-xs italic text-slate-500 dark:text-slate-400">Figura 1.4. Flujograma metodológico: Gestión comunicacional en crisis de equipo. Fuente: Dajanara Borbor (2026).</span>
+          <div class="my-6 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900">
+            <img src="assets/img/figura_1_4_dajanara.png" alt="Figura 4. Flujograma del Caso Práctico" class="w-full max-h-96 object-contain p-3 cursor-pointer hover:opacity-95 transition-opacity" onclick="openLightbox('assets/img/figura_1_4_dajanara.png', 'Figura 4. Flujograma metodológico del caso práctico: Dinámica comunicacional y resolución de crisis en equipos remotos.')">
+            <div class="p-2.5 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 text-center">
+              <span class="text-xs text-slate-500 dark:text-slate-400">Figura 4. Flujograma metodológico: Dinámica comunicacional y resolución de crisis en equipos remotos.</span>
             </div>
           </div>
         </section>
@@ -347,12 +294,7 @@
          ========================================================================== -->
     <article id="evaluacion-360" class="scroll-mt-24">
       
-      <div class="border-b border-slate-200 dark:border-slate-800 pb-4 mb-8">
-        <div class="flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-1.5">
-          <span>Capítulo 2</span>
-          <span>•</span>
-          <span>Criterio Oficial: 4 Puntos</span>
-        </div>
+      <div class="border-b border-slate-200 dark:border-slate-800 pb-3 mb-8">
         <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
           2. Modelo de Retroalimentación 360 Grados
         </h2>
@@ -360,95 +302,88 @@
 
       <div class="article-prose space-y-12">
 
-        <!-- 2.1 Fundamentos y 4 Actores (Fredy) -->
-        <section id="sec-2-1" class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-sm">
-          <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
-            <h3 class="text-xl font-bold text-slate-900 dark:text-white !m-0">2.1 Fundamentos del Sistema Multisource y Cultura de Confianza</h3>
-            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-cyan-50 text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-300">Investigación: Fredy Cuichan</span>
-          </div>
+        <!-- 2.1 Fundamentos y 4 Actores -->
+        <section id="sec-2-1">
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white">2.1 Fundamentos del modelo 360° y cultura de confianza</h3>
 
           <p>
             El modelo de retroalimentación 360 grados, también denominado evaluación multisource, es un sistema integral en el cual el desempeño, competencias y conductas de un individuo son evaluados por múltiples actores de su ecosistema laboral inmediato, trascendiendo la visión jerárquica vertical tradicional (Bracken et al., 2001). Su principal ventaja metodológica radica en la triangulación de perspectivas, minimizando los sesgos personales y contrastando la autopercepción con la visión colectiva.
           </p>
 
           <!-- Componente Interactivo: Selector de Actores 360 -->
-          <div class="my-8 p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+          <div class="my-8 p-5 sm:p-6 rounded-2xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-700">
             <div class="flex items-center justify-between mb-4">
-              <h4 class="font-bold text-sm text-slate-900 dark:text-white flex items-center gap-2">
-                <span>🎯 Explorador Interactivo de los Cuatro Actores Evaluativos</span>
+              <h4 class="font-bold text-sm text-slate-900 dark:text-white">
+                Explorador de los Cuatro Actores Evaluativos
               </h4>
-              <span class="text-xs text-slate-500">Haz clic en cada botón para explorar</span>
+              <span class="text-xs text-slate-500">Selecciona un actor:</span>
             </div>
 
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-5">
-              <button type="button" class="actor-360-btn py-2.5 px-3 rounded-xl text-xs font-bold transition-all text-center" data-actor="superiores">
-                1. Superiores
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4">
+              <button type="button" class="actor-360-btn py-2 px-3 rounded-xl text-xs font-bold transition-all text-center" data-actor="superiores">
+                Superiores
               </button>
-              <button type="button" class="actor-360-btn py-2.5 px-3 rounded-xl text-xs font-bold transition-all text-center" data-actor="pares">
-                2. Pares
+              <button type="button" class="actor-360-btn py-2 px-3 rounded-xl text-xs font-bold transition-all text-center" data-actor="pares">
+                Pares
               </button>
-              <button type="button" class="actor-360-btn py-2.5 px-3 rounded-xl text-xs font-bold transition-all text-center" data-actor="colaboradores">
-                3. Colaboradores
+              <button type="button" class="actor-360-btn py-2 px-3 rounded-xl text-xs font-bold transition-all text-center" data-actor="colaboradores">
+                Colaboradores
               </button>
-              <button type="button" class="actor-360-btn py-2.5 px-3 rounded-xl text-xs font-bold transition-all text-center" data-actor="autoevaluacion">
-                4. Autoevaluación
+              <button type="button" class="actor-360-btn py-2 px-3 rounded-xl text-xs font-bold transition-all text-center" data-actor="autoevaluacion">
+                Autoevaluación
               </button>
             </div>
 
-            <!-- Contenedor dinámico de datos del actor -->
             <div id="actor-360-content"></div>
           </div>
 
           <!-- Imagen 2.1 -->
-          <div class="mt-6 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900">
-            <img src="assets/img/figura_2_1_fredy.png" alt="Figura 2.1 Arquitectura 360" class="w-full max-h-96 object-contain p-4 cursor-pointer hover:opacity-95 transition-opacity" onclick="openLightbox('assets/img/figura_2_1_fredy.png', 'Figura 2.1. Arquitectura de evaluación 360°: Interacción de los cuatro actores del ecosistema evaluativo.', 'Fredy Cuichan')">
-            <div class="p-3 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 text-center">
-              <span class="text-xs italic text-slate-500 dark:text-slate-400">Figura 2.1. Evaluación 360°: Los cuatro actores evaluadores. Fuente: Fredy Cuichan (Canva, 2026).</span>
+          <div class="my-6 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900">
+            <img src="assets/img/figura_2_1_fredy.png" alt="Figura 5. Arquitectura 360" class="w-full max-h-96 object-contain p-3 cursor-pointer hover:opacity-95 transition-opacity" onclick="openLightbox('assets/img/figura_2_1_fredy.png', 'Figura 5. Arquitectura de evaluación 360°: Interacción de los cuatro actores del ecosistema evaluativo.')">
+            <div class="p-2.5 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 text-center">
+              <span class="text-xs text-slate-500 dark:text-slate-400">Figura 5. Arquitectura de evaluación 360°: Interacción de los cuatro actores evaluativos.</span>
             </div>
           </div>
         </section>
 
-        <!-- 2.2 Caso Práctico y Riesgos (Ariel) -->
-        <section id="sec-2-2" class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-sm">
-          <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
-            <h3 class="text-xl font-bold text-slate-900 dark:text-white !m-0">2.2 Caso Práctico Aplicado 360°, Metodología y Gestión de Riesgos</h3>
-            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300">Metodología: Ariel Taco</span>
-          </div>
+        <!-- 2.2 Caso Práctico y Riesgos -->
+        <section id="sec-2-2">
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white">2.2 Metodología de aplicación, beneficios y gestión de riesgos</h3>
 
           <p>
             Se examina la evaluación 360° aplicada a la gestión de un coordinador de área académica superior. Para evitar desconfianza, el proceso se estructuró en cuatro fases rigurosas: <strong>1) Sensibilización</strong> (aclarando el propósito formativo no punitivo); <strong>2) Aplicación técnica</strong> (cuestionario confidencial con reactivos de conductas observables); <strong>3) Entrega formativa</strong> (diálogo respetuoso privado); y <strong>4) Formulación de plan de mejora</strong> con compromisos y fechas semestrales (London & Smither, 1995; Smither et al., 1995).
           </p>
 
-          <!-- Tabla de Riesgos y Mitigación -->
+          <!-- Tabla de Riesgos y Mitigación con Hover Seguro en Modo Oscuro -->
           <div class="my-6 overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
             <table class="w-full text-left text-xs sm:text-sm">
               <thead class="bg-espe-navy text-white text-xs uppercase font-semibold">
                 <tr>
                   <th class="p-3.5">Beneficios Organizacionales</th>
-                  <th class="p-3.5">Riesgos Potenciales Latentes</th>
-                  <th class="p-3.5">Medidas Preventivas de Mitigación</th>
+                  <th class="p-3.5">Riesgos Potenciales</th>
+                  <th class="p-3.5">Medidas de Mitigación</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-slate-200 dark:divide-slate-700 bg-white dark:bg-slate-800">
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-750">
-                  <td class="p-3.5 font-medium text-slate-800 dark:text-slate-200">Mayor autoconocimiento y contraste de percepción.</td>
-                  <td class="p-3.5 text-rose-600 dark:text-rose-400">Temor a represalias o inhibición de la sinceridad.</td>
-                  <td class="p-3.5 text-slate-600 dark:text-slate-300">Garantizar confidencialidad absoluta y custodia de datos.</td>
+                <tr class="table-row-hover">
+                  <td class="p-3.5 text-slate-700 dark:text-slate-200 font-medium">Mayor autoconocimiento y contraste de percepción.</td>
+                  <td class="p-3.5 text-rose-600 dark:text-rose-400 font-medium">Temor a represalias o inhibición de la sinceridad.</td>
+                  <td class="p-3.5 text-slate-700 dark:text-slate-200">Garantizar confidencialidad absoluta y custodia de datos.</td>
                 </tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-750">
-                  <td class="p-3.5 font-medium text-slate-800 dark:text-slate-200">Fortalecimiento de la cohesión y el diálogo.</td>
-                  <td class="p-3.5 text-rose-600 dark:text-rose-400">Sesgos derivados de roces o conflictos personales.</td>
-                  <td class="p-3.5 text-slate-600 dark:text-slate-300">Diseñar reactivos centrados en conductas objetivas.</td>
+                <tr class="table-row-hover">
+                  <td class="p-3.5 text-slate-700 dark:text-slate-200 font-medium">Fortalecimiento de la cohesión y el diálogo.</td>
+                  <td class="p-3.5 text-rose-600 dark:text-rose-400 font-medium">Sesgos derivados de roces o conflictos personales.</td>
+                  <td class="p-3.5 text-slate-700 dark:text-slate-200">Diseñar reactivos centrados en conductas objetivas.</td>
                 </tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-750">
-                  <td class="p-3.5 font-medium text-slate-800 dark:text-slate-200">Detección temprana de brechas de liderazgo.</td>
-                  <td class="p-3.5 text-rose-600 dark:text-rose-400">Interpretación punitiva de las áreas de mejora.</td>
-                  <td class="p-3.5 text-slate-600 dark:text-slate-300">Conducir la entrega de resultados mediante diálogo reflexivo.</td>
+                <tr class="table-row-hover">
+                  <td class="p-3.5 text-slate-700 dark:text-slate-200 font-medium">Detección temprana de brechas de liderazgo.</td>
+                  <td class="p-3.5 text-rose-600 dark:text-rose-400 font-medium">Interpretación punitiva de las áreas de mejora.</td>
+                  <td class="p-3.5 text-slate-700 dark:text-slate-200">Conducir la entrega de resultados mediante diálogo reflexivo.</td>
                 </tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-750">
-                  <td class="p-3.5 font-medium text-slate-800 dark:text-slate-200">Planes personalizados de desarrollo formativo.</td>
-                  <td class="p-3.5 text-rose-600 dark:text-rose-400">Falta de seguimiento posterior a la evaluación.</td>
-                  <td class="p-3.5 text-slate-600 dark:text-slate-300">Fijar compromisos medibles y revisiones periódicas.</td>
+                <tr class="table-row-hover">
+                  <td class="p-3.5 text-slate-700 dark:text-slate-200 font-medium">Planes personalizados de desarrollo formativo.</td>
+                  <td class="p-3.5 text-rose-600 dark:text-rose-400 font-medium">Falta de seguimiento posterior a la evaluación.</td>
+                  <td class="p-3.5 text-slate-700 dark:text-slate-200">Fijar compromisos medibles y revisiones periódicas.</td>
                 </tr>
               </tbody>
             </table>
@@ -463,12 +398,7 @@
          ========================================================================== -->
     <article id="coaching" class="scroll-mt-24">
       
-      <div class="border-b border-slate-200 dark:border-slate-800 pb-4 mb-8">
-        <div class="flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400 mb-1.5">
-          <span>Capítulo 3</span>
-          <span>•</span>
-          <span>Criterio Oficial: 4 Puntos</span>
-        </div>
+      <div class="border-b border-slate-200 dark:border-slate-800 pb-3 mb-8">
         <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
           3. Retroalimentación Estilo Coaching y Acompañamiento 1 a 1
         </h2>
@@ -476,78 +406,60 @@
 
       <div class="article-prose space-y-12">
 
-        <!-- 3.1 Marco ICF y Preguntas Poderosas (Daysi) -->
-        <section id="sec-3-1" class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-sm">
-          <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
-            <h3 class="text-xl font-bold text-slate-900 dark:text-white !m-0">3.1 Marco de la ICF, Competencias Clave y Preguntas Poderosas</h3>
-            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-fuchsia-50 text-fuchsia-700 dark:bg-fuchsia-900/30 dark:text-fuchsia-300">Investigación: Daysi Tipantuña</span>
-          </div>
+        <!-- 3.1 Marco ICF y Preguntas Poderosas -->
+        <section id="sec-3-1">
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white">3.1 Competencias clave y formulación de preguntas reflexivas (ICF)</h3>
 
           <p>
             La retroalimentación concebida desde el paradigma del coaching profesional se sustenta en los lineamientos de la <strong>International Coaching Federation (ICF)</strong>. A diferencia de los enfoques evaluativos tradicionales, caracterizados por señalar fallas de manera directiva y generar posturas defensivas, el coaching articula un espacio dialógico y colaborativo. Su propósito cardinal radica en acompañar al individuo para que explore su propio desempeño, reconozca sus fortalezas y asuma una responsabilidad activa en la construcción de soluciones creativas.
           </p>
 
-          <!-- Componente Interactivo: Acordeón Decálogo ICF -->
-          <div class="my-8">
-            <div class="flex items-center justify-between mb-4">
-              <h4 class="font-bold text-sm text-slate-900 dark:text-white flex items-center gap-2">
-                <span>💬 Decálogo Interactivo de Preguntas Poderosas (Modelo ICF)</span>
-              </h4>
-              <span class="text-xs text-slate-500">Haz clic en cada pregunta para ver su propósito</span>
-            </div>
-            <div id="preguntas-icf-container" class="space-y-2.5"></div>
+          <!-- Componente Interactivo: Acordeón Refinado ICF -->
+          <div class="my-6">
+            <h4 class="font-bold text-sm text-slate-900 dark:text-white mb-3">
+              Decálogo de Preguntas Poderosas para Líderes y Formadores
+            </h4>
+            <div id="preguntas-icf-container" class="divide-y divide-slate-200 dark:divide-slate-800 border-t border-b border-slate-200 dark:border-slate-800"></div>
           </div>
         </section>
 
-        <!-- 3.2 Acompañamiento 1 a 1 (Klever) -->
-        <section id="sec-3-2" class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-sm">
-          <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
-            <h3 class="text-xl font-bold text-slate-900 dark:text-white !m-0">3.2 Pautas Prácticas de Acompañamiento en Reuniones 1 a 1</h3>
-            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-blue-50 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300">Desarrollo: Klever López</span>
-          </div>
+        <!-- 3.2 Acompañamiento 1 a 1 -->
+        <section id="sec-3-2">
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white">3.2 Metodología de acompañamiento en reuniones individuales (1 a 1)</h3>
 
           <p>
             En los entornos organizacionales y educativos actuales, marcados por la virtualidad y la interacción a distancia, la reunión individual periódica (one-on-one) constituye el espacio idóneo para aplicar la retroalimentación estilo coaching. Lejos de concebirse como una sesión de fiscalización o supervisión punitiva, su propósito fundamental es brindar acompañamiento personalizado, fortalecer la seguridad psicológica y estimular el crecimiento continuo de la persona en un clima de absoluta cercanía humana.
           </p>
 
-          <!-- Tarjetas de los 3 Momentos del 1 a 1 -->
+          <!-- Tres Momentos del 1 a 1 -->
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
-            <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+            <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
               <div>
-                <span class="inline-block text-xs font-bold px-2.5 py-1 rounded bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300 mb-3">Momento 1</span>
+                <span class="inline-block text-xs font-bold text-espe-navy dark:text-sky-400 mb-2">Fase 1</span>
                 <h4 class="font-bold text-base text-slate-900 dark:text-white mb-2">Apertura y Conexión Empática</h4>
                 <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                  El espacio inicia priorizando el bienestar de la persona antes de entrar a revisar tareas o pendientes técnicos. Preguntar con genuino interés sobre su estado anímico o carga cotidiana construye confianza y reduce la frialdad virtual.
+                  El espacio inicia priorizando el bienestar de la persona antes de entrar a revisar tareas. Preguntar con genuino interés sobre su estado anímico o carga cotidiana construye confianza y reduce la distancia virtual.
                 </p>
-              </div>
-              <div class="mt-4 pt-3 border-t border-slate-200/80 dark:border-slate-800 text-[11px] font-semibold text-espe-navy dark:text-sky-400">
-                Foco: Seguridad Psicológica
               </div>
             </div>
 
-            <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+            <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
               <div>
-                <span class="inline-block text-xs font-bold px-2.5 py-1 rounded bg-purple-100 text-purple-800 dark:bg-purple-900/40 dark:text-purple-300 mb-3">Momento 2</span>
-                <h4 class="font-bold text-base text-slate-900 dark:text-white mb-2">Indagación Reflexiva y Escucha Activa</h4>
+                <span class="inline-block text-xs font-bold text-purple-600 dark:text-purple-400 mb-2">Fase 2</span>
+                <h4 class="font-bold text-base text-slate-900 dark:text-white mb-2">Indagación y Método GROW</h4>
                 <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                  En lugar de señalar errores o imponer soluciones unilaterales, se formulan preguntas abiertas orientadas a la toma de conciencia, identificando obstáculos y explorando alternativas bajo el método GROW (Whitmore, 2018).
+                  En lugar de señalar errores o imponer soluciones unilaterales, se formulan preguntas abiertas orientadas a la toma de conciencia, identificando obstáculos y explorando alternativas (Whitmore, 2018).
                 </p>
-              </div>
-              <div class="mt-4 pt-3 border-t border-slate-200/80 dark:border-slate-800 text-[11px] font-semibold text-purple-600 dark:text-purple-400">
-                Foco: Autonomía y Método GROW
               </div>
             </div>
 
-            <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+            <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
               <div>
-                <span class="inline-block text-xs font-bold px-2.5 py-1 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300 mb-3">Momento 3</span>
-                <h4 class="font-bold text-base text-slate-900 dark:text-white mb-2">Compromiso Mutuo y Seguimiento</h4>
+                <span class="inline-block text-xs font-bold text-emerald-600 dark:text-emerald-400 mb-2">Fase 3</span>
+                <h4 class="font-bold text-base text-slate-900 dark:text-white mb-2">Compromiso y Seguimiento</h4>
                 <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                  El diálogo concluye estableciendo acuerdos concretos y verificables en el tiempo, determinando la primera acción inmediata y fijando una fecha de revisión. Esto consolida un sentido de corresponsabilidad compartida.
+                  El diálogo concluye estableciendo acuerdos concretos y verificables en el tiempo, determinando la primera acción inmediata y fijando una fecha de revisión compartida.
                 </p>
-              </div>
-              <div class="mt-4 pt-3 border-t border-slate-200/80 dark:border-slate-800 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
-                Foco: Plan de Acción y Fechas
               </div>
             </div>
           </div>
@@ -557,104 +469,75 @@
     </article>
 
     <!-- ==========================================================================
-         SECCIÓN 4: VIDEOTECA Y RECURSOS MULTIMEDIA
+         SECCIÓN 4: VIDEOTECA DE APOYO ACADÉMICO
          ========================================================================== -->
-    <section id="multimedia" class="scroll-mt-24">
+    <section id="videoteca" class="scroll-mt-24">
       
-      <div class="border-b border-slate-200 dark:border-slate-800 pb-4 mb-8">
-        <div class="flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-1.5">
-          <span>Sección Multimedia</span>
-          <span>•</span>
-          <span>Recursos Digitales de los 8 Integrantes</span>
-        </div>
+      <div class="border-b border-slate-200 dark:border-slate-800 pb-3 mb-6">
         <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
-          4. Videoteca Educativa & Galería Infográfica Interactiva
+          4. Recursos Audiovisuales Recomendados
         </h2>
-      </div>
-
-      <!-- Filtros de categoría -->
-      <div class="flex flex-wrap items-center gap-2 mb-8">
-        <button type="button" class="video-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all" data-cat="all" onclick="filterVideos('all')">Todos los Videos</button>
-        <button type="button" class="video-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all" data-cat="comunicacion" onclick="filterVideos('comunicacion')">Comunicación Asertiva</button>
-        <button type="button" class="video-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all" data-cat="360" onclick="filterVideos('360')">Evaluación 360°</button>
-        <button type="button" class="video-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all" data-cat="coaching" onclick="filterVideos('coaching')">Coaching & ICF</button>
-        <button type="button" class="video-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all" data-cat="ia" onclick="filterVideos('ia')">Inteligencia Artificial</button>
-      </div>
-
-      <!-- Cuadrícula de videos embebidos de YouTube -->
-      <div id="videos-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16"></div>
-
-      <!-- Subsección de Infografías -->
-      <div class="pt-6 border-t border-slate-200/80 dark:border-slate-800 mb-6">
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Galería de Infografías y Esquemas Metodológicos</h3>
-        <p class="text-sm text-slate-600 dark:text-slate-400">Recursos visuales interactivos elaborados en Canva y Genially. Haz clic en cualquiera para visualizarlo en alta resolución.</p>
-      </div>
-      <div id="infografias-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-    </section>
-
-    <!-- ==========================================================================
-         SECCIÓN 5: MURO DE REFLEXIONES (VOCES DEL GRUPO A)
-         ========================================================================== -->
-    <section id="reflexiones" class="scroll-mt-24">
-      
-      <div class="border-b border-slate-200 dark:border-slate-800 pb-4 mb-8">
-        <div class="flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 mb-1.5">
-          <span>Sección de Cierre</span>
-          <span>•</span>
-          <span>Perspectivas del Equipo</span>
-        </div>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
-          5. Muro de Reflexión Grupal: Aprendizajes y Autoevaluación
-        </h2>
-        <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">
-          Síntesis reflexiva consolidada en torno a los cuatro ejes orientadores institucionales de la cátedra de Liderazgo y la autoevaluación final de la sinergia colaborativa.
+        <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">
+          Selección de conferencias magistrales, charlas TEDx y guías metodológicas sobre comunicación, modelos evaluativos y coaching.
         </p>
       </div>
 
-      <div id="reflexiones-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+      <!-- Filtros de categoría -->
+      <div class="flex flex-wrap items-center gap-2 mb-6">
+        <button type="button" class="video-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all" data-cat="all" onclick="filterVideos('all')">Todos</button>
+        <button type="button" class="video-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all" data-cat="comunicacion" onclick="filterVideos('comunicacion')">Comunicación</button>
+        <button type="button" class="video-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all" data-cat="360" onclick="filterVideos('360')">Evaluación 360°</button>
+        <button type="button" class="video-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all" data-cat="coaching" onclick="filterVideos('coaching')">Coaching</button>
+        <button type="button" class="video-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all" data-cat="ia" onclick="filterVideos('ia')">Tecnología e IA</button>
+      </div>
+
+      <!-- Cuadrícula de videos embebidos de YouTube -->
+      <div id="videos-grid" class="grid grid-cols-1 md:grid-cols-2 gap-5"></div>
     </section>
 
     <!-- ==========================================================================
-         SECCIÓN 6: BIBLIOTECA APA 7 CON BUSCADOR
+         SECCIÓN 5: REFLEXIÓN GRUPAL EDITORIAL
+         ========================================================================== -->
+    <section id="reflexiones" class="scroll-mt-24">
+      
+      <div class="border-b border-slate-200 dark:border-slate-800 pb-3 mb-6">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+          5. Reflexión Grupal: Aprendizajes y Autoevaluación
+        </h2>
+        <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">
+          Síntesis de aprendizajes adquiridos en torno a los ejes de la cátedra de Liderazgo y valoración del trabajo colaborativo.
+        </p>
+      </div>
+
+      <div id="reflexiones-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+    </section>
+
+    <!-- ==========================================================================
+         SECCIÓN 6: REFERENCIAS BIBLIOGRÁFICAS (LISTA ACADÉMICA LIMPIA)
          ========================================================================== -->
     <section id="referencias" class="scroll-mt-24">
       
-      <div class="border-b border-slate-200 dark:border-slate-800 pb-4 mb-8">
-        <div class="flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-rose-600 dark:text-rose-400 mb-1.5">
-          <span>Rigor Académico</span>
-          <span>•</span>
-          <span>Criterio Oficial: 1 Punto</span>
-        </div>
+      <div class="border-b border-slate-200 dark:border-slate-800 pb-3 mb-6">
         <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
-          6. Referencias Bibliográficas (Normas APA 7.ª Edición)
+          6. Referencias Bibliográficas
         </h2>
       </div>
 
-      <!-- Barra de Búsqueda y Filtros en Tiempo Real -->
-      <div class="p-6 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-sm mb-6">
-        <div class="flex flex-col sm:flex-row items-center gap-4 justify-between mb-4">
-          <div class="relative w-full sm:w-80">
-            <input 
-              id="ref-search-input" 
-              type="text" 
-              placeholder="Buscar por autor, título, año o DOI..." 
-              class="w-full pl-9 pr-4 py-2.5 text-xs rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-espe-navy">
-            <svg class="w-4 h-4 text-slate-400 absolute left-3 top-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-          </div>
-          <span id="referencias-count" class="text-xs font-bold text-slate-500 dark:text-slate-400">20 referencias registradas</span>
+      <!-- Buscador y filtro ágil -->
+      <div class="flex flex-col sm:flex-row items-center gap-3 justify-between mb-4">
+        <div class="relative w-full sm:w-80">
+          <input 
+            id="ref-search-input" 
+            type="text" 
+            placeholder="Buscar por autor, título, año o DOI..." 
+            class="w-full pl-9 pr-3 py-2 text-xs rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-espe-navy">
+          <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
         </div>
-
-        <div class="flex flex-wrap items-center gap-2">
-          <button type="button" class="ref-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition-all bg-espe-navy text-white" data-cat="all">Todas</button>
-          <button type="button" class="ref-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition-all bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300" data-cat="comunicacion">Comunicación</button>
-          <button type="button" class="ref-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition-all bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300" data-cat="360">Evaluación 360°</button>
-          <button type="button" class="ref-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition-all bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300" data-cat="coaching">Coaching ICF</button>
-          <button type="button" class="ref-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition-all bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300" data-cat="ia">IA & Tecnología</button>
-        </div>
+        <span id="referencias-count" class="text-xs text-slate-500 dark:text-slate-400">20 fuentes consultadas</span>
       </div>
 
-      <!-- Contenedor dinámico de referencias -->
-      <div id="referencias-container" class="space-y-3"></div>
+      <!-- Contenedor dinámico de lista académica -->
+      <div id="referencias-container" class="space-y-1"></div>
     </section>
 
   </main>
@@ -663,39 +546,50 @@
        MODAL LIGHTBOX PARA AMPLIACIÓN DE INFOGRAFÍAS
        ============================================================================ -->
   <div id="lightbox-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 flex items-center justify-center p-4">
-    <div class="relative max-w-5xl w-full bg-white dark:bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border border-slate-700 flex flex-col max-h-[90vh]">
-      <div class="flex items-center justify-between p-4 border-b border-slate-200 dark:border-slate-800">
+    <div class="relative max-w-4xl w-full bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-2xl border border-slate-700 flex flex-col max-h-[90vh]">
+      <div class="flex items-center justify-between p-3.5 border-b border-slate-200 dark:border-slate-800">
         <div>
-          <h4 id="lightbox-title" class="font-bold text-slate-900 dark:text-white text-base"></h4>
+          <h4 id="lightbox-title" class="font-bold text-slate-900 dark:text-white text-sm"></h4>
           <span id="lightbox-author" class="text-xs text-slate-500 dark:text-slate-400"></span>
         </div>
-        <button id="lightbox-close" type="button" class="p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        <button id="lightbox-close" type="button" class="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
         </button>
       </div>
-      <div class="p-4 overflow-auto flex items-center justify-center bg-slate-100 dark:bg-slate-950 flex-1">
-        <img id="lightbox-img" src="" alt="Infografía ampliada" class="max-w-full max-h-[70vh] object-contain rounded-xl shadow-md">
+      <div class="p-3 overflow-auto flex items-center justify-center bg-slate-100 dark:bg-slate-950 flex-1">
+        <img id="lightbox-img" src="" alt="Infografía ampliada" class="max-w-full max-h-[70vh] object-contain rounded-lg">
       </div>
     </div>
   </div>
 
   <!-- ============================================================================
-       FOOTER INSTITUCIONAL
+       FOOTER CON CRÉDITOS DEL EQUIPO (GRUPO A)
        ============================================================================ -->
-  <footer class="mt-24 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 py-12 transition-colors">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6">
+  <footer class="mt-20 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 py-10 transition-colors">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="flex items-center gap-3">
-        <img src="assets/img/logo_espe.png" alt="Logo ESPE" class="h-10 w-auto object-contain">
-        <div>
-          <h5 class="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white">Universidad de las Fuerzas Armadas ESPE</h5>
-          <p class="text-xs text-slate-500 dark:text-slate-400">Departamento de Seguridad y Defensa • Asignatura Liderazgo (NRC: 34467)</p>
+      <!-- Lista limpia de integrantes -->
+      <div class="border-b border-slate-100 dark:border-slate-850 pb-6 mb-6">
+        <h5 class="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-3">Equipo de Trabajo (Grupo A):</h5>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 text-xs text-slate-600 dark:text-slate-400">
+          <div>• Nicole Tonato Tonato</div>
+          <div>• Francis Batallas Izurieta</div>
+          <div>• Paola Amaguaya Galeas</div>
+          <div>• Dajanara Borbor Limones</div>
+          <div>• Fredy Cuichan Bautista</div>
+          <div>• Ariel Taco Coque</div>
+          <div>• Daysi Tipantuña Montalvo</div>
+          <div>• Klever López Quilligana</div>
         </div>
       </div>
 
-      <div class="text-xs text-slate-500 dark:text-slate-400 text-center sm:text-right">
-        <p class="font-semibold text-slate-700 dark:text-slate-300">Desarrollado en código abierto por el Grupo A</p>
-        <p class="mt-0.5">Repositorio alojado en <a href="https://github.com/Klopezxd/liderazgo-coaching-blog.git" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">GitHub</a> y desplegado en <span class="font-bold text-slate-900 dark:text-white">Vercel</span></p>
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400 text-center sm:text-left">
+        <div>
+          <span class="font-bold text-slate-800 dark:text-slate-200">Universidad de las Fuerzas Armadas ESPE</span> — Liderazgo (NRC: 34467)
+        </div>
+        <div>
+          Repositorio en <a href="https://github.com/Klopezxd/liderazgo-coaching-blog.git" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">GitHub</a> • Desplegado en Vercel
+        </div>
       </div>
 
     </div>

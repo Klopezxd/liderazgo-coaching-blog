@@ -9,8 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initMobileMenu();
   renderPreguntasICF();
   renderVideoteca("all");
-  renderInfografias("all");
-  renderReflexiones("all");
+  renderReflexiones();
   renderReferencias();
   initSearchReferencias();
   init360Selector();
@@ -94,60 +93,60 @@ function initMobileMenu() {
 // -----------------------------------------------------------------------------
 const ACTORES_360_DATA = {
   superiores: {
-    title: "1. Superiores Jerárquicos (Dirección y Jefaturas)",
-    badge: "Visión Estratégica",
-    badgeColor: "bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300",
+    title: "Superiores Jerárquicos (Dirección y Jefaturas)",
+    badge: "Alineación Estratégica",
+    badgeColor: "bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-200",
     description:
-      "Evalúan la alineación estratégica con los objetivos institucionales, la toma responsable de decisiones, la puntualidad en entregables críticos y la capacidad para gestionar recursos organizacionales bajo presión.",
+      "Evalúan la alineación estratégica con los objetivos institucionales, la toma responsable de decisiones, la puntualidad en entregables críticos y la capacidad para gestionar recursos bajo incertidumbre.",
     metrics: [
-      "Cumplimiento de metas e indicadores operativos.",
-      "Resolución oportuna de contingencias y criterio técnico.",
-      "Representación institucional y respeto a los conductos regulares.",
-      "Capacidad de gestión de presupuestos y cronogramas."
+      "Cumplimiento de metas e indicadores operativos pactados.",
+      "Criterio técnico y resolución oportuna de contingencias.",
+      "Representación institucional y respeto a conductos regulares.",
+      "Gestión equitativa de presupuestos y cronogramas."
     ],
-    quote: "«El superior evalúa si el colaborador transforma directrices complejas en resultados tangibles y medibles» (Bracken et al., 2001)."
+    quote: "«El superior evalúa si el líder transforma directrices complejas en resultados tangibles y medibles» (Bracken et al., 2001)."
   },
   pares: {
-    title: "2. Pares y Compañeros de Equipo (Relaciones Horizontales)",
+    title: "Pares y Compañeros de Equipo (Nivel Horizontal)",
     badge: "Sinergia & Cooperación",
-    badgeColor: "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300",
+    badgeColor: "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/50 dark:text-emerald-200",
     description:
-      "Ponderan la disposición genuina para el trabajo colaborativo, la honestidad en el intercambio de información, la reciprocidad en momentos de alta carga y la empatía en la convivencia cotidiana.",
+      "Ponderan la disposición genuina para el trabajo colaborativo, la honestidad en el intercambio de información, la reciprocidad en momentos de alta exigencia y la empatía cotidiana.",
     metrics: [
-      "Espíritu de apoyo mutuo y corresponsabilidad.",
+      "Espíritu de apoyo mutuo y corresponsabilidad operativa.",
       "Comunicación asertiva y resolución pacífica de desacuerdos.",
       "Generosidad en la transferencia de conocimientos técnicos.",
       "Puntualidad en los compromisos que afectan el trabajo ajeno."
     ],
-    quote: "«Los pares detectan la coherencia real del trato humano más allá de las apariencias formales de jerarquía» (London & Smither, 1995)."
+    quote: "«Los pares detectan la coherencia real del trato humano más allá de las formalidades de cargo» (London & Smither, 1995)."
   },
   colaboradores: {
-    title: "3. Colaboradores a Cargo (Subordinados y Equipos Guiados)",
+    title: "Colaboradores a Cargo (Equipos Guiados)",
     badge: "Liderazgo Servicial",
-    badgeColor: "bg-purple-100 text-purple-800 dark:bg-purple-900/40 dark:text-purple-300",
+    badgeColor: "bg-purple-100 text-purple-800 dark:bg-purple-900/50 dark:text-purple-200",
     description:
-      "Juzgan la cercanía y accesibilidad afectiva del líder, la claridad pedagógica de las instrucciones impartidas, la equidad en la distribución del trabajo y el respaldo brindado ante dificultades operativas.",
+      "Juzgan la accesibilidad y cercanía del líder, la claridad pedagógica de las instrucciones, la equidad en la distribución del trabajo y el respaldo brindado ante dificultades.",
     metrics: [
       "Seguridad psicológica y apertura para escuchar inquietudes.",
-      "Reconocimiento público de los méritos del equipo.",
-      "Retroalimentación formativa sin humillaciones ni represalias.",
+      "Reconocimiento oportuno de los méritos del equipo.",
+      "Retroalimentación formativa sin actitudes punitivas.",
       "Fomento de la autonomía decisional y el crecimiento profesional."
     ],
     quote: "«La valoración de los colaboradores revela el impacto emocional y la credibilidad inspiradora del liderazgo» (Smither et al., 1995)."
   },
   autoevaluacion: {
-    title: "4. Autoevaluación (Reflexión Introspectiva)",
-    badge: "Autoconocimiento Crítico",
-    badgeColor: "bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300",
+    title: "Autoevaluación (Reflexión Introspectiva)",
+    badge: "Autoconocimiento",
+    badgeColor: "bg-amber-100 text-amber-800 dark:bg-amber-900/50 dark:text-amber-200",
     description:
-      "Constituye el ejercicio de madurez donde el propio individuo analiza con rigor ético sus fortalezas consolidadas, sus puntos ciegos, sus reacciones emocionales ante la frustración y sus aspiraciones formativas.",
+      "Constituye el ejercicio de madurez donde el propio individuo analiza con rigor ético sus fortalezas, sus puntos ciegos, sus reacciones emocionales ante la presión y sus áreas de mejora.",
     metrics: [
-      "Contraste honesto entre la intención propia y la percepción externa.",
-      "Identificación de hábitos de procrastinación o fatiga.",
+      "Contraste honesto entre la intención propia y la percepción ajena.",
+      "Identificación de hábitos de fatiga o procrastinación.",
       "Disposición real a recibir retroalimentación constructiva.",
-      "Formulación de compromisos voluntarios de superación."
+      "Formulación de compromisos voluntarios de superación continua."
     ],
-    quote: "«La autoevaluación es el punto de partida indispensable para que el coaching active un plan de mejora duradero» (Chiavenato, 2020)."
+    quote: "«La autoevaluación es el punto de partida indispensable para que el coaching active un plan duradero» (Chiavenato, 2020)."
   }
 };
 
@@ -162,28 +161,28 @@ function init360Selector() {
     buttons.forEach((btn) => {
       const btnKey = btn.getAttribute("data-actor");
       if (btnKey === key) {
-        btn.classList.add("bg-espe-navy", "text-white", "shadow-md");
-        btn.classList.remove("bg-slate-100", "dark:bg-slate-800", "text-slate-700", "dark:text-slate-300");
+        btn.classList.add("bg-espe-navy", "text-white", "shadow-sm");
+        btn.classList.remove("bg-slate-100", "dark:bg-slate-800", "text-slate-600", "dark:text-slate-300");
       } else {
-        btn.classList.remove("bg-espe-navy", "text-white", "shadow-md");
-        btn.classList.add("bg-slate-100", "dark:bg-slate-800", "text-slate-700", "dark:text-slate-300");
+        btn.classList.remove("bg-espe-navy", "text-white", "shadow-sm");
+        btn.classList.add("bg-slate-100", "dark:bg-slate-800", "text-slate-600", "dark:text-slate-300");
       }
     });
 
     contentContainer.innerHTML = `
-      <div class="animate-fade-in p-6 bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
-        <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
-          <h4 class="text-xl font-bold text-slate-900 dark:text-white">${data.title}</h4>
-          <span class="text-xs font-semibold px-3 py-1 rounded-full ${data.badgeColor}">${data.badge}</span>
+      <div class="animate-fade-in p-5 sm:p-6 bg-white dark:bg-slate-800 rounded-2xl border border-slate-200/90 dark:border-slate-700/80 shadow-sm">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
+          <h4 class="text-lg font-bold text-slate-900 dark:text-white">${data.title}</h4>
+          <span class="text-xs font-semibold px-2.5 py-1 rounded-md ${data.badgeColor}">${data.badge}</span>
         </div>
-        <p class="text-slate-600 dark:text-slate-300 text-base leading-relaxed mb-5">${data.description}</p>
-        <div class="bg-slate-50 dark:bg-slate-900/60 p-4 rounded-xl border border-slate-200/80 dark:border-slate-800 mb-4">
-          <h5 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2.5">Factores e Indicadores Observables:</h5>
-          <ul class="space-y-2">
-            ${data.metrics.map(m => `<li class="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300"><span class="text-emerald-500 font-bold">✓</span> ${m}</li>`).join('')}
+        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">${data.description}</p>
+        <div class="bg-slate-50 dark:bg-slate-900/60 p-4 rounded-xl border border-slate-200/70 dark:border-slate-800 mb-3">
+          <h5 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">Aspectos Observables:</h5>
+          <ul class="space-y-1.5">
+            ${data.metrics.map(m => `<li class="flex items-start gap-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300"><span class="text-emerald-500 font-bold">✓</span> ${m}</li>`).join('')}
           </ul>
         </div>
-        <p class="text-xs italic text-slate-500 dark:text-slate-400 border-l-2 border-espe-navy pl-3">${data.quote}</p>
+        <p class="text-xs italic text-slate-500 dark:text-slate-400 border-l-2 border-espe-navy dark:border-sky-500 pl-3">${data.quote}</p>
       </div>
     `;
   }
@@ -195,34 +194,31 @@ function init360Selector() {
     });
   });
 
-  // Inicializar en superiores
   updateCard("superiores");
 }
 
 // -----------------------------------------------------------------------------
-// 5. ACORDEÓN INTERACTIVO: DECÁLOGO DE PREGUNTAS PODEROSAS ICF
+// 5. ACORDEÓN REFINADO: PREGUNTAS PODEROSAS ICF
 // -----------------------------------------------------------------------------
 function renderPreguntasICF() {
   const container = document.getElementById("preguntas-icf-container");
   if (!container) return;
 
   container.innerHTML = PREGUNTAS_ICF_DATA.map((item, idx) => `
-    <div class="border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden bg-white dark:bg-slate-800 transition-all">
-      <button type="button" class="w-full text-left p-4.5 flex items-center justify-between gap-4 font-semibold text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-750 transition-colors" onclick="toggleICFItem(${idx})">
+    <div class="accordion-item border-b border-slate-200 dark:border-slate-800/80 transition-colors">
+      <button type="button" class="w-full text-left py-3.5 px-2 flex items-center justify-between gap-4 font-semibold text-slate-800 dark:text-slate-200 hover:text-espe-navy dark:hover:text-sky-400 transition-colors" onclick="toggleICFItem(${idx})">
         <div class="flex items-center gap-3">
-          <span class="text-xs font-bold font-mono px-2.5 py-1 rounded-md bg-espe-navy/10 text-espe-navy dark:bg-sky-900/40 dark:text-sky-300">${item.num}</span>
-          <span class="text-sm md:text-base">${item.question}</span>
+          <span class="text-xs font-bold font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">${item.num}</span>
+          <span class="text-sm sm:text-base font-medium">${item.question}</span>
         </div>
-        <div class="flex items-center gap-2">
-          <span class="hidden sm:inline-block text-xs font-medium px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">${item.purpose}</span>
-          <svg id="icf-icon-${idx}" class="w-5 h-5 text-slate-400 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </div>
+        <svg id="icf-icon-${idx}" class="w-4 h-4 text-slate-400 flex-shrink-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
       </button>
-      <div id="icf-body-${idx}" class="hidden p-4.5 pt-0 text-sm text-slate-600 dark:text-slate-300 border-t border-slate-100 dark:border-slate-700/50 bg-slate-50/60 dark:bg-slate-900/40">
-        <p class="mb-2"><strong class="text-slate-800 dark:text-slate-200">Propósito Formativo:</strong> ${item.explanation}</p>
-        <span class="text-xs text-espe-accent font-semibold">Fundamento: Modelo de Competencias ICF (Evocación de Conciencia y Presencia)</span>
+      <div id="icf-body-${idx}" class="hidden pb-4 px-2 pl-10 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+        <p class="bg-slate-50 dark:bg-slate-800/40 p-3 rounded-xl border border-slate-100 dark:border-slate-800 text-xs sm:text-sm">
+          <strong class="text-slate-800 dark:text-slate-200 font-semibold">Propósito:</strong> ${item.explanation}
+        </p>
       </div>
     </div>
   `).join("");
@@ -244,7 +240,7 @@ window.toggleICFItem = function(idx) {
 };
 
 // -----------------------------------------------------------------------------
-// 6. VIDEOTECA Y RECURSOS MULTIMEDIA
+// 6. VIDEOTECA Y RECURSOS AUDIOVISUALES
 // -----------------------------------------------------------------------------
 function renderVideoteca(category) {
   const container = document.getElementById("videos-grid");
@@ -267,30 +263,28 @@ function renderVideoteca(category) {
       </div>
       <div class="p-5 flex-1 flex flex-col justify-between">
         <div>
-          <div class="flex items-center justify-between text-xs font-semibold mb-2">
-            <span class="text-espe-navy dark:text-sky-400 uppercase tracking-wider">${v.category.toUpperCase()}</span>
-            <span class="text-slate-400">${v.speaker}</span>
+          <div class="flex items-center justify-between text-xs font-semibold mb-2 text-slate-500 dark:text-slate-400">
+            <span class="text-espe-navy dark:text-sky-400 uppercase tracking-wider text-[11px] font-bold">${v.category.toUpperCase()}</span>
+            <span>${v.speaker}</span>
           </div>
           <h4 class="font-bold text-base text-slate-900 dark:text-white mb-2 leading-snug">${v.title}</h4>
-          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">${v.description}</p>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">${v.description}</p>
         </div>
-        <div class="pt-3 border-t border-slate-100 dark:border-slate-700/60 flex items-center justify-between text-xs text-slate-500">
-          <span>Aporte: <strong>${v.member}</strong></span>
+        <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-700/60 flex items-center justify-end text-xs">
           <a href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">Ver en YouTube ↗</a>
         </div>
       </div>
     </div>
   `).join("");
 
-  // Actualizar estilos de los botones de filtro
   document.querySelectorAll(".video-filter-btn").forEach(btn => {
     const cat = btn.getAttribute("data-cat");
     if (cat === category) {
       btn.classList.add("bg-espe-navy", "text-white");
-      btn.classList.remove("bg-slate-100", "dark:bg-slate-800", "text-slate-700", "dark:text-slate-300");
+      btn.classList.remove("bg-slate-100", "dark:bg-slate-800", "text-slate-600", "dark:text-slate-300");
     } else {
       btn.classList.remove("bg-espe-navy", "text-white");
-      btn.classList.add("bg-slate-100", "dark:bg-slate-800", "text-slate-700", "dark:text-slate-300");
+      btn.classList.add("bg-slate-100", "dark:bg-slate-800", "text-slate-600", "dark:text-slate-300");
     }
   });
 }
@@ -300,39 +294,8 @@ window.filterVideos = function(category) {
 };
 
 // -----------------------------------------------------------------------------
-// 7. GALERÍA DE INFOGRAFÍAS Y LIGHTBOX
+// 7. LIGHTBOX MODAL PARA INFOGRAFÍAS
 // -----------------------------------------------------------------------------
-function renderInfografias(category) {
-  const container = document.getElementById("infografias-grid");
-  if (!container) return;
-
-  const filtered = category === "all" ? INFOGRAPHICS_DATA : INFOGRAPHICS_DATA.filter(i => i.category === category);
-
-  container.innerHTML = filtered.map(item => `
-    <div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-sm card-hover flex flex-col">
-      <div class="relative overflow-hidden cursor-pointer group bg-slate-100 dark:bg-slate-900 aspect-video flex items-center justify-center" onclick="openLightbox('${item.image}', '${item.title}', '${item.author}')">
-        <img src="${item.image}" alt="${item.title}" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy">
-        <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-          <span class="bg-white/90 dark:bg-slate-900/90 text-slate-900 dark:text-white px-3 py-1.5 rounded-full text-xs font-semibold shadow-lg">🔍 Ampliar Imagen</span>
-        </div>
-      </div>
-      <div class="p-5 flex-1 flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between text-xs mb-2">
-            <span class="font-bold text-espe-accent uppercase tracking-wider">${item.tool}</span>
-            <span class="text-slate-400">${item.author}</span>
-          </div>
-          <h4 class="font-bold text-base text-slate-900 dark:text-white mb-2 leading-snug">${item.title}</h4>
-          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">${item.description}</p>
-        </div>
-        <button type="button" class="w-full py-2 px-3 rounded-lg bg-slate-50 dark:bg-slate-700/50 hover:bg-slate-100 dark:hover:bg-slate-700 text-xs font-semibold text-slate-700 dark:text-slate-200 transition-colors" onclick="openLightbox('${item.image}', '${item.title}', '${item.author}')">
-          Ver recurso en alta resolución
-        </button>
-      </div>
-    </div>
-  `).join("");
-}
-
 function initLightbox() {
   const modal = document.getElementById("lightbox-modal");
   const closeBtn = document.getElementById("lightbox-close");
@@ -364,45 +327,32 @@ window.openLightbox = function(imageSrc, title, author) {
 
   modalImg.src = imageSrc;
   if (modalTitle) modalTitle.textContent = title;
-  if (modalAuthor) modalAuthor.textContent = `Autor/a: ${author}`;
+  if (modalAuthor) modalAuthor.textContent = author ? `Fuente: ${author}` : "";
   modal.classList.remove("hidden");
 };
 
 // -----------------------------------------------------------------------------
-// 8. MURO DE REFLEXIONES DEL GRUPO A
+// 8. REFLEXIÓN GRUPAL EDITORIAL
 // -----------------------------------------------------------------------------
-function renderReflexiones(careerFilter) {
+function renderReflexiones() {
   const container = document.getElementById("reflexiones-grid");
   if (!container) return;
 
-  const filtered = careerFilter === "all" ? TEAM_MEMBERS : TEAM_MEMBERS.filter(m => m.career.toLowerCase().includes(careerFilter.toLowerCase()));
-
-  container.innerHTML = filtered.map(m => `
-    <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 shadow-sm card-hover flex flex-col justify-between">
+  container.innerHTML = TEAM_MEMBERS.map(m => `
+    <div class="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/80 shadow-sm flex flex-col justify-between">
       <div>
-        <div class="flex items-center gap-3.5 mb-4">
-          <div class="w-11 h-11 rounded-full bg-gradient-to-tr ${m.color} text-white font-bold flex items-center justify-center text-sm shadow-sm flex-shrink-0">
-            ${m.avatar}
-          </div>
-          <div>
-            <h4 class="font-bold text-slate-900 dark:text-white text-base leading-tight">${m.name}</h4>
-            <span class="text-xs text-slate-500 dark:text-slate-400 font-medium">${m.career} • ${m.role}</span>
-          </div>
+        <div class="border-b border-slate-100 dark:border-slate-700/60 pb-2.5 mb-3">
+          <h4 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base leading-snug">${m.name}</h4>
+          <span class="text-xs text-slate-500 dark:text-slate-400 font-medium">${m.career} • ${m.topic}</span>
         </div>
-        <div class="mb-3">
-          <span class="inline-block text-xs font-semibold px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 mb-2">${m.reflectionTitle}</span>
-          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed italic">"${m.reflectionText}"</p>
-        </div>
-      </div>
-      <div class="pt-3 border-t border-slate-100 dark:border-slate-700/60 text-xs text-slate-400 font-medium">
-        Apartado Asignado: ${m.topic.split(":")[0]}
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed italic">"${m.reflection}"</p>
       </div>
     </div>
   `).join("");
 }
 
 // -----------------------------------------------------------------------------
-// 9. BUSCADOR DINÁMICO DE REFERENCIAS BIBLIOGRÁFICAS (APA 7)
+// 9. BIBLIOTECA APA 7 (LISTA ACADÉMICA LIMPIA CON SANGRÍA FRANCESA)
 // -----------------------------------------------------------------------------
 let currentRefCategory = "all";
 
@@ -428,25 +378,24 @@ function renderReferencias(searchQuery = "") {
   }
 
   if (countBadge) {
-    countBadge.textContent = `${filtered.length} de ${REFERENCES_DATA.length} referencias`;
+    countBadge.textContent = `${filtered.length} de ${REFERENCES_DATA.length} fuentes consultadas`;
   }
 
   if (filtered.length === 0) {
     container.innerHTML = `
       <div class="p-8 text-center text-slate-500 dark:text-slate-400">
-        <p class="text-base font-semibold">No se encontraron referencias para la búsqueda.</p>
-        <p class="text-xs mt-1">Intenta con otros términos como "coaching", "Chiavenato", "2026" o "IA".</p>
+        <p class="text-sm font-semibold">No se encontraron referencias para la búsqueda.</p>
+        <p class="text-xs mt-1">Intenta buscar por autor (ej. Chiavenato, Whitmore, Marsh) o año.</p>
       </div>
     `;
     return;
   }
 
+  // Renderizado como lista académica con sangría francesa (sin tarjetas pesadas)
   container.innerHTML = filtered.map(r => `
-    <div class="p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-espe-navy/40 transition-colors">
-      <p class="apa-reference text-sm text-slate-800 dark:text-slate-200">
-        <strong>${r.author}</strong> (${r.year}). <em>${r.title}</em>. ${r.source}.
-        ${r.doi ? `<a href="${r.doi}" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline break-all block mt-1 text-xs">🔗 ${r.doi}</a>` : ""}
-      </p>
+    <div class="apa-reference-item text-xs sm:text-sm text-slate-800 dark:text-slate-200">
+      <strong>${r.author}</strong> (${r.year}). <em>${r.title}</em>. ${r.source}.
+      ${r.doi ? `<a href="${r.doi}" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline break-all inline-block ml-1">🔗 ${r.doi}</a>` : ""}
     </div>
   `).join("");
 }
@@ -466,10 +415,10 @@ function initSearchReferencias() {
       filterBtns.forEach(b => {
         if (b === btn) {
           b.classList.add("bg-espe-navy", "text-white");
-          b.classList.remove("bg-slate-100", "dark:bg-slate-800", "text-slate-700", "dark:text-slate-300");
+          b.classList.remove("bg-slate-100", "dark:bg-slate-800", "text-slate-600", "dark:text-slate-300");
         } else {
           b.classList.remove("bg-espe-navy", "text-white");
-          b.classList.add("bg-slate-100", "dark:bg-slate-800", "text-slate-700", "dark:text-slate-300");
+          b.classList.add("bg-slate-100", "dark:bg-slate-800", "text-slate-600", "dark:text-slate-300");
         }
       });
 

@@ -24,7 +24,7 @@ html {
   position: fixed;
   top: 0;
   left: 0;
-  height: 4px;
+  height: 3px;
   background: linear-gradient(90deg, #154360, #0D9488, #3B82F6);
   width: 0%;
   z-index: 9999;
@@ -55,24 +55,66 @@ html {
   color: #F8FAFC;
 }
 
+/* Arreglo crítico para hover en tablas en modo oscuro */
+.table-row-hover {
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.table-row-hover:hover {
+  background-color: #F1F5F9 !important;
+}
+
+.dark .table-row-hover:hover {
+  background-color: #1E293B !important;
+  color: #F8FAFC !important;
+}
+
+.dark .table-row-hover:hover td {
+  color: #F1F5F9 !important;
+}
+
+/* Estilos de Sangría Francesa para Referencias APA 7 (Lista Académica Pura) */
+.apa-reference-item {
+  padding-left: 2rem;
+  text-indent: -2rem;
+  line-height: 1.65;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+  transition: background-color 0.15s ease;
+}
+
+.dark .apa-reference-item {
+  border-bottom-color: rgba(51, 65, 85, 0.5);
+}
+
+.apa-reference-item:hover {
+  background-color: rgba(241, 245, 249, 0.6);
+  border-radius: 0.5rem;
+}
+
+.dark .apa-reference-item:hover {
+  background-color: rgba(30, 41, 59, 0.5);
+}
+
 /* Efectos visuales de tarjetas */
 .card-hover {
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-hover:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 24px -10px rgba(15, 23, 42, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -10px rgba(15, 23, 42, 0.1);
 }
 
 .dark .card-hover:hover {
-  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.4);
 }
 
 /* Personalización del scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
 }
 
 ::-webkit-scrollbar-track {
@@ -98,19 +140,25 @@ html {
   -webkit-backdrop-filter: blur(8px);
 }
 
-/* Estilos de Sangría Francesa para Referencias APA 7 */
-.apa-reference {
-  padding-left: 2rem;
-  text-indent: -2rem;
-  line-height: 1.6;
+/* Desplegables refinados */
+.accordion-item {
+  transition: background-color 0.15s ease;
+}
+
+.accordion-item:hover {
+  background-color: rgba(248, 250, 252, 0.8);
+}
+
+.dark .accordion-item:hover {
+  background-color: rgba(30, 41, 59, 0.5);
 }
 
 /* Animaciones sutiles */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(6px); }
+  from { opacity: 0; transform: translateY(4px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.3s ease-out forwards;
+  animation: fadeIn 0.25s ease-out forwards;
 }
