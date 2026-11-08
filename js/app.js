@@ -17,17 +17,15 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // -----------------------------------------------------------------------------
-// 1. GESTIÓN DEL TEMA (MODO CLARO / OSCURO)
+// 1. GESTIÓN DEL TEMA (MODO CLARO POR DEFECTO ABSOLUTO)
 // -----------------------------------------------------------------------------
 function initTheme() {
   const themeToggleBtn = document.getElementById("theme-toggle");
   const darkIcon = document.getElementById("theme-toggle-dark-icon");
   const lightIcon = document.getElementById("theme-toggle-light-icon");
 
-  const isDark =
-    localStorage.getItem("color-theme") === "dark" ||
-    (!("color-theme" in localStorage) &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches);
+  // Modo claro estricto por defecto: solo se activa dark si el usuario lo guardó expresamente
+  const isDark = localStorage.getItem("color-theme") === "dark";
 
   if (isDark) {
     document.documentElement.classList.add("dark");
@@ -81,7 +79,7 @@ function initMobileMenu() {
     menu?.classList.toggle("hidden");
   });
 
-  links?.forEach((link) => {
+  links?.forEach(link => {
     link.addEventListener("click", () => {
       menu?.classList.add("hidden");
     });
@@ -89,13 +87,13 @@ function initMobileMenu() {
 }
 
 // -----------------------------------------------------------------------------
-// 4. INTERACTIVO: SELECTOR DE ACTORES 360°
+// 4. SELECTOR INTERACTIVO: MODELO 360° (ALTO CONTRASTE)
 // -----------------------------------------------------------------------------
 const ACTORES_360_DATA = {
   superiores: {
     title: "Superiores Jerárquicos (Dirección y Jefaturas)",
     badge: "Alineación Estratégica",
-    badgeColor: "bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-200",
+    badgeColor: "bg-blue-100 text-blue-900 dark:bg-blue-950 dark:text-blue-200 border border-blue-200 dark:border-blue-800",
     description:
       "Evalúan la alineación estratégica con los objetivos institucionales, la toma responsable de decisiones, la puntualidad en entregables críticos y la capacidad para gestionar recursos bajo incertidumbre.",
     metrics: [
@@ -109,7 +107,7 @@ const ACTORES_360_DATA = {
   pares: {
     title: "Pares y Compañeros de Equipo (Nivel Horizontal)",
     badge: "Sinergia & Cooperación",
-    badgeColor: "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/50 dark:text-emerald-200",
+    badgeColor: "bg-emerald-100 text-emerald-900 dark:bg-emerald-950 dark:text-emerald-200 border border-emerald-200 dark:border-emerald-800",
     description:
       "Ponderan la disposición genuina para el trabajo colaborativo, la honestidad en el intercambio de información, la reciprocidad en momentos de alta exigencia y la empatía cotidiana.",
     metrics: [
@@ -123,7 +121,7 @@ const ACTORES_360_DATA = {
   colaboradores: {
     title: "Colaboradores a Cargo (Equipos Guiados)",
     badge: "Liderazgo Servicial",
-    badgeColor: "bg-purple-100 text-purple-800 dark:bg-purple-900/50 dark:text-purple-200",
+    badgeColor: "bg-purple-100 text-purple-900 dark:bg-purple-950 dark:text-purple-200 border border-purple-200 dark:border-purple-800",
     description:
       "Juzgan la accesibilidad y cercanía del líder, la claridad pedagógica de las instrucciones, la equidad en la distribución del trabajo y el respaldo brindado ante dificultades.",
     metrics: [
@@ -137,7 +135,7 @@ const ACTORES_360_DATA = {
   autoevaluacion: {
     title: "Autoevaluación (Reflexión Introspectiva)",
     badge: "Autoconocimiento",
-    badgeColor: "bg-amber-100 text-amber-800 dark:bg-amber-900/50 dark:text-amber-200",
+    badgeColor: "bg-amber-100 text-amber-900 dark:bg-amber-950 dark:text-amber-200 border border-amber-200 dark:border-amber-800",
     description:
       "Constituye el ejercicio de madurez donde el propio individuo analiza con rigor ético sus fortalezas, sus puntos ciegos, sus reacciones emocionales ante la presión y sus áreas de mejora.",
     metrics: [
@@ -161,28 +159,26 @@ function init360Selector() {
     buttons.forEach((btn) => {
       const btnKey = btn.getAttribute("data-actor");
       if (btnKey === key) {
-        btn.classList.add("bg-espe-navy", "text-white", "shadow-sm");
-        btn.classList.remove("bg-slate-100", "dark:bg-slate-800", "text-slate-600", "dark:text-slate-300");
+        btn.className = "actor-360-btn py-2 px-3 rounded-xl text-xs font-bold transition-all text-center bg-espe-navy text-white shadow-sm";
       } else {
-        btn.classList.remove("bg-espe-navy", "text-white", "shadow-sm");
-        btn.classList.add("bg-slate-100", "dark:bg-slate-800", "text-slate-600", "dark:text-slate-300");
+        btn.className = "actor-360-btn py-2 px-3 rounded-xl text-xs font-bold transition-all text-center bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-600";
       }
     });
 
     contentContainer.innerHTML = `
-      <div class="animate-fade-in p-5 sm:p-6 bg-white dark:bg-slate-800 rounded-2xl border border-slate-200/90 dark:border-slate-700/80 shadow-sm">
+      <div class="animate-fade-in p-5 sm:p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
         <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
-          <h4 class="text-lg font-bold text-slate-900 dark:text-white">${data.title}</h4>
-          <span class="text-xs font-semibold px-2.5 py-1 rounded-md ${data.badgeColor}">${data.badge}</span>
+          <h4 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">${data.title}</h4>
+          <span class="text-xs font-bold px-2.5 py-1 rounded-md ${data.badgeColor}">${data.badge}</span>
         </div>
-        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">${data.description}</p>
-        <div class="bg-slate-50 dark:bg-slate-900/60 p-4 rounded-xl border border-slate-200/70 dark:border-slate-800 mb-3">
-          <h5 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">Aspectos Observables:</h5>
+        <p class="text-slate-700 dark:text-slate-200 text-sm leading-relaxed mb-4">${data.description}</p>
+        <div class="bg-slate-50 dark:bg-slate-800/70 p-4 rounded-xl border border-slate-200 dark:border-slate-700 mb-3">
+          <h5 class="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">Aspectos Observables:</h5>
           <ul class="space-y-1.5">
-            ${data.metrics.map(m => `<li class="flex items-start gap-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300"><span class="text-emerald-500 font-bold">✓</span> ${m}</li>`).join('')}
+            ${data.metrics.map(m => `<li class="flex items-start gap-2 text-xs sm:text-sm text-slate-800 dark:text-slate-200"><span class="text-emerald-600 dark:text-emerald-400 font-bold">✓</span> ${m}</li>`).join('')}
           </ul>
         </div>
-        <p class="text-xs italic text-slate-500 dark:text-slate-400 border-l-2 border-espe-navy dark:border-sky-500 pl-3">${data.quote}</p>
+        <p class="text-xs italic text-slate-600 dark:text-slate-400 border-l-2 border-espe-navy dark:border-sky-500 pl-3">${data.quote}</p>
       </div>
     `;
   }
@@ -198,26 +194,26 @@ function init360Selector() {
 }
 
 // -----------------------------------------------------------------------------
-// 5. ACORDEÓN REFINADO: PREGUNTAS PODEROSAS ICF
+// 5. ACORDEÓN REFINADO: PREGUNTAS PODEROSAS ICF (ALTO CONTRASTE)
 // -----------------------------------------------------------------------------
 function renderPreguntasICF() {
   const container = document.getElementById("preguntas-icf-container");
   if (!container) return;
 
   container.innerHTML = PREGUNTAS_ICF_DATA.map((item, idx) => `
-    <div class="accordion-item border-b border-slate-200 dark:border-slate-800/80 transition-colors">
-      <button type="button" class="w-full text-left py-3.5 px-2 flex items-center justify-between gap-4 font-semibold text-slate-800 dark:text-slate-200 hover:text-espe-navy dark:hover:text-sky-400 transition-colors" onclick="toggleICFItem(${idx})">
+    <div class="accordion-item mb-2.5 rounded-xl border border-slate-200 dark:border-slate-700/80 overflow-hidden bg-white dark:bg-slate-800/80 shadow-sm transition-all">
+      <button type="button" class="w-full text-left py-3 px-4 flex items-center justify-between gap-4 text-slate-900 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors" onclick="toggleICFItem(${idx})">
         <div class="flex items-center gap-3">
-          <span class="text-xs font-bold font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">${item.num}</span>
-          <span class="text-sm sm:text-base font-medium">${item.question}</span>
+          <span class="text-xs font-bold font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-600">${item.num}</span>
+          <span class="text-sm font-semibold">${item.question}</span>
         </div>
-        <svg id="icf-icon-${idx}" class="w-4 h-4 text-slate-400 flex-shrink-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg id="icf-icon-${idx}" class="w-4 h-4 text-slate-400 dark:text-slate-300 flex-shrink-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
         </svg>
       </button>
-      <div id="icf-body-${idx}" class="hidden pb-4 px-2 pl-10 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-        <p class="bg-slate-50 dark:bg-slate-800/40 p-3 rounded-xl border border-slate-100 dark:border-slate-800 text-xs sm:text-sm">
-          <strong class="text-slate-800 dark:text-slate-200 font-semibold">Propósito:</strong> ${item.explanation}
+      <div id="icf-body-${idx}" class="hidden p-4 pt-2 border-t border-slate-100 dark:border-slate-700/60 bg-slate-50/70 dark:bg-slate-900/60 text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed">
+        <p>
+          <strong class="font-bold text-slate-900 dark:text-white">Propósito formativo:</strong> ${item.explanation}
         </p>
       </div>
     </div>
@@ -345,7 +341,7 @@ function renderReflexiones() {
           <h4 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base leading-snug">${m.name}</h4>
           <span class="text-xs text-slate-500 dark:text-slate-400 font-medium">${m.career} • ${m.topic}</span>
         </div>
-        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed italic">"${m.reflection}"</p>
+        <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed italic">"${m.reflection}"</p>
       </div>
     </div>
   `).join("");
@@ -358,7 +354,6 @@ let currentRefCategory = "all";
 
 function renderReferencias(searchQuery = "") {
   const container = document.getElementById("referencias-container");
-  const countBadge = document.getElementById("referencias-count");
   if (!container) return;
 
   let filtered = REFERENCES_DATA;
@@ -377,10 +372,6 @@ function renderReferencias(searchQuery = "") {
     );
   }
 
-  if (countBadge) {
-    countBadge.textContent = `${filtered.length} de ${REFERENCES_DATA.length} fuentes consultadas`;
-  }
-
   if (filtered.length === 0) {
     container.innerHTML = `
       <div class="p-8 text-center text-slate-500 dark:text-slate-400">
@@ -391,9 +382,9 @@ function renderReferencias(searchQuery = "") {
     return;
   }
 
-  // Renderizado como lista académica con sangría francesa (sin tarjetas pesadas)
+  // Renderizado como lista académica con sangría francesa (sin contadores de IA)
   container.innerHTML = filtered.map(r => `
-    <div class="apa-reference-item text-xs sm:text-sm text-slate-800 dark:text-slate-200">
+    <div class="apa-reference-item text-xs sm:text-sm text-slate-900 dark:text-slate-100">
       <strong>${r.author}</strong> (${r.year}). <em>${r.title}</em>. ${r.source}.
       ${r.doi ? `<a href="${r.doi}" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline break-all inline-block ml-1">🔗 ${r.doi}</a>` : ""}
     </div>
@@ -402,27 +393,7 @@ function renderReferencias(searchQuery = "") {
 
 function initSearchReferencias() {
   const input = document.getElementById("ref-search-input");
-  const filterBtns = document.querySelectorAll(".ref-filter-btn");
-
   input?.addEventListener("input", (e) => {
     renderReferencias(e.target.value);
-  });
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      currentRefCategory = btn.getAttribute("data-cat") || "all";
-
-      filterBtns.forEach(b => {
-        if (b === btn) {
-          b.classList.add("bg-espe-navy", "text-white");
-          b.classList.remove("bg-slate-100", "dark:bg-slate-800", "text-slate-600", "dark:text-slate-300");
-        } else {
-          b.classList.remove("bg-espe-navy", "text-white");
-          b.classList.add("bg-slate-100", "dark:bg-slate-800", "text-slate-600", "dark:text-slate-300");
-        }
-      });
-
-      renderReferencias(input?.value || "");
-    });
   });
 }

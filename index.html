@@ -7,6 +7,15 @@
   <meta name="description" content="Blog académico sobre habilidades de comunicación efectiva, modelo de evaluación 360° y competencias conversacionales de coaching ICF en entornos organizacionales contemporáneos.">
   <meta name="author" content="Grupo A - Liderazgo (NRC: 34467) - ESPE">
 
+  <!-- Script inmediato para forzar modo claro por defecto -->
+  <script>
+    if (localStorage.getItem('color-theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -102,9 +111,9 @@
   </header>
 
   <!-- ============================================================================
-       HERO EDITORIAL SOBRIO (CERO TARJETAS INFLADAS NI BADGES DE IA)
+       HERO EDITORIAL SOBRIO
        ============================================================================ -->
-  <section id="hero" class="relative pt-12 pb-14 md:pt-16 md:pb-18 border-b border-slate-200/80 dark:border-slate-800 bg-gradient-to-b from-white via-slate-50/40 to-white dark:from-slate-900 dark:via-slate-850 dark:to-slate-900">
+  <section id="hero" class="relative pt-12 pb-14 md:pt-16 md:pb-18 border-b border-slate-200/80 dark:border-slate-800 bg-gradient-to-b from-white via-slate-50/40 to-white dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       
       <!-- Eyebrow institucional -->
@@ -160,12 +169,12 @@
             En el ámbito de las organizaciones contemporáneas y los entornos formativos, la comunicación digital no consiste únicamente en transmitir información, sino en asegurar que el emisor estructure el mensaje con un propósito claro, seleccionando los canales adecuados y verificando la comprensión precisa por parte de los destinatarios. Un emisor eficaz asume la responsabilidad de definir el tono, el momento oportuno y el formato idóneo para evitar ambigüedades.
           </p>
 
-          <div class="my-5 p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border-l-4 border-espe-navy dark:border-sky-500">
+          <div class="my-5 p-5 rounded-2xl bg-slate-100 dark:bg-slate-800 border-l-4 border-espe-navy dark:border-sky-500">
             <h4 class="font-bold text-sm text-slate-900 dark:text-white mb-2">Caso Práctico: Organización de la Feria Académica</h4>
-            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-3">
+            <p class="text-sm text-slate-700 dark:text-slate-200 leading-relaxed mb-3">
               Un coordinador de área en educación superior debe asignar responsabilidades operativas y cronogramas a un equipo docente diverso. Con el fin de erradicar interpretaciones erróneas, se implementa una estrategia multicanal coordinada:
             </p>
-            <ul class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 space-y-1.5 list-disc list-inside">
+            <ul class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 space-y-1.5 list-disc list-inside">
               <li><strong>Videollamada síncrona:</strong> Para socializar la visión general y absolver dudas conceptuales en tiempo real.</li>
               <li><strong>Correo electrónico institucional:</strong> Para formalizar el acta de acuerdos, cronograma y matrices de entregables.</li>
               <li><strong>Mensajería instantánea:</strong> Uso exclusivo para alertas atómicas y recordatorios ágiles de avance.</li>
@@ -181,22 +190,22 @@
           </div>
         </section>
 
-        <!-- 1.2 Recepción y Barreras -->
+        <!-- 1.2 Barreras en la Comunicación Digital -->
         <section id="sec-1-2">
-          <h3 class="text-xl font-bold text-slate-900 dark:text-white">1.2 Recepción del mensaje, contexto y barreras comunicacionales</h3>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white">1.2 Barreras comunicacionales en canales digitales y estrategias de mitigación</h3>
 
           <p>
-            En el contexto organizacional, la comunicación solo se consolida de forma exitosa cuando el receptor comprende el mensaje en la dimensión exacta concebida por el emisor (Robbins & Judge, 2017). El receptor no cumple un papel pasivo ni actúa como un simple buzón; por el contrario, actúa como un intérprete activo que decodifica cada palabra a partir de sus vivencias previas, escala de valores y estado anímico particular (Chiavenato, 2020).
+            La virtualización del trabajo introduce interferencias tecnológicas, psicológicas y semánticas. La ausencia de señales no verbales propicia malentendidos y dilata la toma de decisiones si no se aplican protocolos estructurados de mitigación.
           </p>
 
-          <!-- Tabla de Barreras con Hover Seguro en Modo Oscuro -->
+          <!-- Tabla de Barreras y Mitigación -->
           <div class="my-6 overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
             <table class="w-full text-left text-xs sm:text-sm">
               <thead class="bg-espe-navy text-white text-xs uppercase font-semibold">
                 <tr>
                   <th class="p-3.5">Barrera Digital</th>
                   <th class="p-3.5">Riesgo en el Equipo</th>
-                  <th class="p-3.5">Medida de Mitigación</th>
+                  <th class="p-3.5">Estrategia de Mitigación</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-slate-200 dark:divide-slate-700 bg-white dark:bg-slate-800">
@@ -245,9 +254,10 @@
             En los entornos contemporáneos de trabajo híbrido y virtual, este flujo bidireccional se ve amenazado por el fenómeno del <strong>ruido digital y la infoxicación</strong>. <strong>Marsh et al. (2024)</strong>, tras evaluar a 142 profesionales digitales, demostraron que la sobrecarga de datos y la angustia por perder información crítica (FOMO) elevan significativamente los índices de estrés y propician el agotamiento laboral (burnout).
           </p>
 
-          <div class="my-5 p-5 rounded-2xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-700">
+          <!-- Callout de Alto Contraste -->
+          <div class="my-5 p-5 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700">
             <h4 class="font-bold text-sm text-slate-900 dark:text-white mb-2">Adopción Ética de la Inteligencia Artificial Generativa</h4>
-            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p class="text-xs sm:text-sm text-slate-800 dark:text-slate-200 leading-relaxed">
               Herramientas basadas en IA optimizan la redacción de informes y automatizan minutas de acuerdos. No obstante, <strong>Mayer y Schwehn (2025)</strong> advierten que, si bien la inteligencia artificial incrementa la eficiencia de tareas técnicas, su empleo acrítico puede provocar desalineación en el aprendizaje colaborativo y deshumanización de los vínculos de trabajo. La tecnología debe potenciar, mas no reemplazar, la empatía y la calidez del diálogo humano.
             </p>
           </div>
@@ -310,13 +320,13 @@
             El modelo de retroalimentación 360 grados, también denominado evaluación multisource, es un sistema integral en el cual el desempeño, competencias y conductas de un individuo son evaluados por múltiples actores de su ecosistema laboral inmediato, trascendiendo la visión jerárquica vertical tradicional (Bracken et al., 2001). Su principal ventaja metodológica radica en la triangulación de perspectivas, minimizando los sesgos personales y contrastando la autopercepción con la visión colectiva.
           </p>
 
-          <!-- Componente Interactivo: Selector de Actores 360 -->
-          <div class="my-8 p-5 sm:p-6 rounded-2xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-700">
+          <!-- Componente Interactivo: Selector de Actores 360 (Alto Contraste) -->
+          <div class="my-8 p-5 sm:p-6 rounded-2xl bg-slate-100/80 dark:bg-slate-800/90 border border-slate-300 dark:border-slate-700">
             <div class="flex items-center justify-between mb-4">
               <h4 class="font-bold text-sm text-slate-900 dark:text-white">
                 Explorador de los Cuatro Actores Evaluativos
               </h4>
-              <span class="text-xs text-slate-500">Selecciona un actor:</span>
+              <span class="text-xs text-slate-600 dark:text-slate-300 font-medium">Selecciona un actor:</span>
             </div>
 
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4">
@@ -354,7 +364,7 @@
             Se examina la evaluación 360° aplicada a la gestión de un coordinador de área académica superior. Para evitar desconfianza, el proceso se estructuró en cuatro fases rigurosas: <strong>1) Sensibilización</strong> (aclarando el propósito formativo no punitivo); <strong>2) Aplicación técnica</strong> (cuestionario confidencial con reactivos de conductas observables); <strong>3) Entrega formativa</strong> (diálogo respetuoso privado); y <strong>4) Formulación de plan de mejora</strong> con compromisos y fechas semestrales (London & Smither, 1995; Smither et al., 1995).
           </p>
 
-          <!-- Tabla de Riesgos y Mitigación con Hover Seguro en Modo Oscuro -->
+          <!-- Tabla de Riesgos y Mitigación -->
           <div class="my-6 overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
             <table class="w-full text-left text-xs sm:text-sm">
               <thead class="bg-espe-navy text-white text-xs uppercase font-semibold">
@@ -414,12 +424,12 @@
             La retroalimentación concebida desde el paradigma del coaching profesional se sustenta en los lineamientos de la <strong>International Coaching Federation (ICF)</strong>. A diferencia de los enfoques evaluativos tradicionales, caracterizados por señalar fallas de manera directiva y generar posturas defensivas, el coaching articula un espacio dialógico y colaborativo. Su propósito cardinal radica en acompañar al individuo para que explore su propio desempeño, reconozca sus fortalezas y asuma una responsabilidad activa en la construcción de soluciones creativas.
           </p>
 
-          <!-- Componente Interactivo: Acordeón Refinado ICF -->
+          <!-- Componente Interactivo: Acordeón Refinado ICF (Tarjetas Limpias) -->
           <div class="my-6">
             <h4 class="font-bold text-sm text-slate-900 dark:text-white mb-3">
               Decálogo de Preguntas Poderosas para Líderes y Formadores
             </h4>
-            <div id="preguntas-icf-container" class="divide-y divide-slate-200 dark:divide-slate-800 border-t border-b border-slate-200 dark:border-slate-800"></div>
+            <div id="preguntas-icf-container" class="space-y-2"></div>
           </div>
         </section>
 
@@ -431,33 +441,33 @@
             En los entornos organizacionales y educativos actuales, marcados por la virtualidad y la interacción a distancia, la reunión individual periódica (one-on-one) constituye el espacio idóneo para aplicar la retroalimentación estilo coaching. Lejos de concebirse como una sesión de fiscalización o supervisión punitiva, su propósito fundamental es brindar acompañamiento personalizado, fortalecer la seguridad psicológica y estimular el crecimiento continuo de la persona en un clima de absoluta cercanía humana.
           </p>
 
-          <!-- Tres Momentos del 1 a 1 -->
+          <!-- Tres Momentos del 1 a 1 (Tarjetas Blancas / Alto Contraste) -->
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
-            <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
+            <div class="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
               <div>
-                <span class="inline-block text-xs font-bold text-espe-navy dark:text-sky-400 mb-2">Fase 1</span>
+                <span class="inline-block text-xs font-bold text-blue-700 dark:text-blue-300 mb-2">Fase 1</span>
                 <h4 class="font-bold text-base text-slate-900 dark:text-white mb-2">Apertura y Conexión Empática</h4>
-                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p class="text-xs text-slate-700 dark:text-slate-200 leading-relaxed">
                   El espacio inicia priorizando el bienestar de la persona antes de entrar a revisar tareas. Preguntar con genuino interés sobre su estado anímico o carga cotidiana construye confianza y reduce la distancia virtual.
                 </p>
               </div>
             </div>
 
-            <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
+            <div class="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
               <div>
-                <span class="inline-block text-xs font-bold text-purple-600 dark:text-purple-400 mb-2">Fase 2</span>
+                <span class="inline-block text-xs font-bold text-purple-700 dark:text-purple-300 mb-2">Fase 2</span>
                 <h4 class="font-bold text-base text-slate-900 dark:text-white mb-2">Indagación y Método GROW</h4>
-                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p class="text-xs text-slate-700 dark:text-slate-200 leading-relaxed">
                   En lugar de señalar errores o imponer soluciones unilaterales, se formulan preguntas abiertas orientadas a la toma de conciencia, identificando obstáculos y explorando alternativas (Whitmore, 2018).
                 </p>
               </div>
             </div>
 
-            <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
+            <div class="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
               <div>
-                <span class="inline-block text-xs font-bold text-emerald-600 dark:text-emerald-400 mb-2">Fase 3</span>
+                <span class="inline-block text-xs font-bold text-emerald-700 dark:text-emerald-300 mb-2">Fase 3</span>
                 <h4 class="font-bold text-base text-slate-900 dark:text-white mb-2">Compromiso y Seguimiento</h4>
-                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p class="text-xs text-slate-700 dark:text-slate-200 leading-relaxed">
                   El diálogo concluye estableciendo acuerdos concretos y verificables en el tiempo, determinando la primera acción inmediata y fijando una fecha de revisión compartida.
                 </p>
               </div>
@@ -523,8 +533,8 @@
         </h2>
       </div>
 
-      <!-- Buscador y filtro ágil -->
-      <div class="flex flex-col sm:flex-row items-center gap-3 justify-between mb-4">
+      <!-- Buscador ágil sin contadores artificiales -->
+      <div class="mb-4">
         <div class="relative w-full sm:w-80">
           <input 
             id="ref-search-input" 
@@ -533,10 +543,9 @@
             class="w-full pl-9 pr-3 py-2 text-xs rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-espe-navy">
           <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
         </div>
-        <span id="referencias-count" class="text-xs text-slate-500 dark:text-slate-400">20 fuentes consultadas</span>
       </div>
 
-      <!-- Contenedor dinámico de lista académica -->
+      <!-- Contenedor dinámico de lista académica con sangría francesa -->
       <div id="referencias-container" class="space-y-1"></div>
     </section>
 
@@ -569,7 +578,7 @@
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Lista limpia de integrantes -->
-      <div class="border-b border-slate-100 dark:border-slate-850 pb-6 mb-6">
+      <div class="border-b border-slate-100 dark:border-slate-800 pb-6 mb-6">
         <h5 class="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-3">Equipo de Trabajo (Grupo A):</h5>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 text-xs text-slate-600 dark:text-slate-400">
           <div>• Nicole Tonato Tonato</div>

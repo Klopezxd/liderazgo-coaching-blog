@@ -31,87 +31,90 @@ html {
   transition: width 0.1s ease-out;
 }
 
-/* Tipografía de artículos para máxima legibilidad estilo editorial */
+/* Tipografía de artículos: Alto contraste estricto */
 .article-prose p {
   margin-bottom: 1.25rem;
   line-height: 1.8;
-  color: #334155;
+  color: #1E293B; /* Slate 800 - Contraste nítido */
   font-size: 1.0625rem;
 }
 
 .dark .article-prose p {
-  color: #CBD5E1;
+  color: #E2E8F0; /* Slate 200 - Contraste nítido en modo oscuro */
 }
 
 .article-prose h3 {
   font-family: var(--font-sans);
-  font-weight: 700;
+  font-weight: 800;
   color: #0F172A;
   margin-top: 1.75rem;
   margin-bottom: 0.75rem;
 }
 
 .dark .article-prose h3 {
-  color: #F8FAFC;
+  color: #FFFFFF;
 }
 
-/* Arreglo crítico para hover en tablas en modo oscuro */
+/* Hover de tablas seguro y de alto contraste */
 .table-row-hover {
-  transition: background-color 0.15s ease, color 0.15s ease;
+  transition: background-color 0.15s ease;
 }
 
 .table-row-hover:hover {
   background-color: #F1F5F9 !important;
 }
 
+.table-row-hover:hover td {
+  color: #0F172A !important;
+}
+
 .dark .table-row-hover:hover {
   background-color: #1E293B !important;
-  color: #F8FAFC !important;
 }
 
 .dark .table-row-hover:hover td {
-  color: #F1F5F9 !important;
+  color: #FFFFFF !important;
 }
 
-/* Estilos de Sangría Francesa para Referencias APA 7 (Lista Académica Pura) */
+/* Lista de Referencias APA 7: Sangría Francesa Académica */
 .apa-reference-item {
   padding-left: 2rem;
   text-indent: -2rem;
   line-height: 1.65;
-  padding-top: 0.6rem;
-  padding-bottom: 0.6rem;
-  border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #E2E8F0;
   transition: background-color 0.15s ease;
 }
 
 .dark .apa-reference-item {
-  border-bottom-color: rgba(51, 65, 85, 0.5);
+  border-bottom-color: #334155;
 }
 
 .apa-reference-item:hover {
-  background-color: rgba(241, 245, 249, 0.6);
+  background-color: #F8FAFC;
   border-radius: 0.5rem;
 }
 
 .dark .apa-reference-item:hover {
-  background-color: rgba(30, 41, 59, 0.5);
+  background-color: #1E293B;
 }
 
-/* Efectos visuales de tarjetas */
+/* Tarjetas y sombras */
 .card-hover {
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-hover:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px -10px rgba(15, 23, 42, 0.1);
+  box-shadow: 0 10px 20px -10px rgba(15, 23, 42, 0.08);
 }
 
 .dark .card-hover:hover {
   box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.4);
 }
 
-/* Personalización del scrollbar */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 7px;
   height: 7px;
@@ -134,31 +137,18 @@ html {
   background: #64748B;
 }
 
-/* Lightbox Modal para infografías */
+/* Lightbox Modal */
 #lightbox-modal {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
 
-/* Desplegables refinados */
-.accordion-item {
-  transition: background-color 0.15s ease;
-}
-
-.accordion-item:hover {
-  background-color: rgba(248, 250, 252, 0.8);
-}
-
-.dark .accordion-item:hover {
-  background-color: rgba(30, 41, 59, 0.5);
-}
-
-/* Animaciones sutiles */
+/* Animaciones */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(4px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.25s ease-out forwards;
+  animation: fadeIn 0.2s ease-out forwards;
 }
